@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Yuli - Prendas Artesanales en Crochet</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        'yuli-pink': '#FF1493',
+                        'yuli-black': '#000000',
+                        'instagram': '#E4405F',  // Color oficial de Instagram
+                    }
+                }
+            }
+        }
+    </script>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+    <style>
+        .logo-hover {
+            transition: transform 0.3s ease;
+        }
+        .logo-hover:hover {
+            transform: scale(1.1);
+        }
+    </style>
+</head>
+<body class="bg-white text-gray-800 font-sans">
+
+    <!-- Header con Logo Local -->
+    <header class="bg-white shadow-md sticky top-0 z-50">
+        <div class="container mx-auto px-6 py-4 flex justify-between items-center">
+            <a href="#inicio" class="block logo-hover">
+                <img src="img/yuli-logo.png" 
+                     alt="Yuli - Prendas Artesanales en Crochet" 
+                     class="h-14 md:h-18 object-contain">
+            </a>
+            <nav class="space-x-6 md:space-x-8 text-lg">
+                <a href="#inicio" class="hover:text-yuli-pink transition">Inicio</a>
+                <a href="#catalogo" class="hover:text-yuli-pink transition">Catálogo</a>
+                <a href="#sobre" class="hover:text-yuli-pink transition">Sobre Yuli</a>
+                <a href="#contacto" class="hover:text-yuli-pink transition">Contacto</a>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section id="inicio" class="bg-gradient-to-b from-pink-50 to-white py-20 text-center">
+        <div class="container mx-auto px-6">
+            <div class="mb-10 logo-hover inline-block">
+                <img src="img/yuli-logo.png" 
+                     alt="Yuli Crochet" 
+                     class="h-40 md:h-56 mx-auto object-contain drop-shadow-lg">
+            </div>
+            <p class="text-2xl md:text-3xl font-light mb-8 text-gray-700">Prendas artesanales en crochet hechas con amor</p>
+            <p class="text-lg max-w-2xl mx-auto mb-10 text-gray-600">
+                Cada pieza es única, creada a mano con hilos de calidad. 
+                <strong class="text-red-600">Tiempo de producción: 2 a 4 semanas.</strong>
+            </p>
+            <a href="#catalogo" class="bg-yuli-pink text-white px-10 py-5 rounded-full text-xl font-medium hover:bg-pink-700 transition shadow-lg">
+                Ver Catálogo
+            </a>
+        </div>
+    </section>
+
+    <!-- Catálogo-->
+    <section id="catalogo" class="py-16 bg-gray-50">
+        <div class="container mx-auto px-6">
+            <h2 class="text-4xl md:text-5xl font-bold text-yuli-pink text-center mb-12">Nuestro Catálogo</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10">
+
+                <!-- Producto 1 -->
+                <div class="bg-white rounded-xl shadow-xl overflow-hidden transform hover:scale-105 transition duration-300">
+                    <img src="https://i.etsystatic.com/20792826/r/il/8b23cc/2025503933/il_570xN.2025503933_jqv8.jpg" alt="Vestido rosa en crochet" class="w-full h-96 object-cover">
+                    <div class="p-6">
+                        <h3 class="text-2xl font-semibold mb-2">Vestido Rosa Elegante</h3>
+                        <p class="text-gray-600 mb-4">Vestido infantil o adulto hecho a mano con hilo premium. Disponible en varias tallas.</p>
+                        <p class="text-2xl font-bold text-yuli-pink mb-4">RD$15,000</p>
+                        <p class="text-sm text-red-600 font-semibold mb-4">Tiempo de producción: 2-4 semanas</p>
+                        <a href="https://wa.me/18295420597" target="_blank" rel="noopener noreferrer" class="bg-yuli-pink text-white px-6 py-3 rounded-full block text-center hover:bg-pink-700 transition font-medium">Solicitar Pedido</a>
+                    </div>
+                </div>
+
+                <!-- Producto 2 al 6 (igual que antes) -->
+            
+                <div class="bg-white rounded-xl shadow-xl overflow-hidden transform hover:scale-105 transition duration-300">
+                    <img src="https://www.mermaidcatdesigns.com/cdn/shop/products/crochet-top-pattern-luna-506777.jpg?v=1702342271&width=1946" alt="Top rosa elegante" class="w-full h-96 object-cover">
+                    <div class="p-6">
+                        <h3 class="text-2xl font-semibold mb-2">Top Rosa Elegante</h3>
+                        <p class="text-gray-600 mb-4">Blusa ligera y fresca, perfecta para cualquier ocasión.</p>
+                        <p class="text-2xl font-bold text-yuli-pink mb-4">RD$6,000</p>
+                        <p class="text-sm text-red-600 font-semibold mb-4">Tiempo de producción: 2-4 semanas</p>
+                        <a href="https://wa.me/18295420597" target="_blank" rel="noopener noreferrer" class="bg-yuli-pink text-white px-6 py-3 rounded-full block text-center hover:bg-pink-700 transition font-medium">Solicitar Pedido</a>
+                    </div>
+                </div>
+
+                <div class="bg-white rounded-xl shadow-xl overflow-hidden transform hover:scale-105 transition duration-300">
+                    <img src="https://hips.hearstapps.com/hmg-prod/images/1-summer-2023-crochet-index-647deb6d8a278.jpg?crop=0.6666666666666666xw:1xh;center,top&resize=1200:*" alt="Conjunto Verano" class="w-full h-96 object-cover">
+                    <div class="p-6">
+                        <h3 class="text-2xl font-semibold mb-2">Conjunto Verano</h3>
+                        <p class="text-gray-600 mb-4">Top y falda coordinados en tonos vibrantes.</p>
+                        <p class="text-2xl font-bold text-yuli-pink mb-4">RD$18,000</p>
+                        <p class="text-sm text-red-600 font-semibold mb-4">Tiempo de producción: 3-4 semanas</p>
+                        <a href="https://wa.me/18295420597" target="_blank" rel="noopener noreferrer" class="bg-yuli-pink text-white px-6 py-3 rounded-full block text-center hover:bg-pink-700 transition font-medium">Solicitar Pedido</a>
+                    </div>
+                </div>
+
+                <div class="bg-white rounded-xl shadow-xl overflow-hidden transform hover:scale-105 transition duration-300">
+                    <img src="https://chaicoffeecrochet.com/wp-content/uploads/2024/01/Kozu-Palm-Pets.jpg" alt="Amigurumi Animalitos" class="w-full h-96 object-cover">
+                    <div class="p-6">
+                        <h3 class="text-2xl font-semibold mb-2">Amigurumi Animalitos</h3>
+                        <p class="text-gray-600 mb-4">Juguetes adorables y seguros para niños.</p>
+                        <p class="text-2xl font-bold text-yuli-pink mb-4">RD$2,000 c/u</p>
+                        <p class="text-sm text-red-600 font-semibold mb-4">Tiempo de producción: 2 semanas</p>
+                        <a href="https://wa.me/18295420597" target="_blank" rel="noopener noreferrer" class="bg-yuli-pink text-white px-6 py-3 rounded-full block text-center hover:bg-pink-700 transition font-medium">Solicitar Pedido</a>
+                    </div>
+                </div>
+
+                <div class="bg-white rounded-xl shadow-xl overflow-hidden transform hover:scale-105 transition duration-300">
+                    <img src="https://yourcrochet.com/wp-content/uploads/2023/10/65ee0723-0-mushroom-bag.jpg" alt="Bolso Artesanal" class="w-full h-96 object-cover">
+                    <div class="p-6">
+                        <h3 class="text-2xl font-semibold mb-2">Bolso Artesanal</h3>
+                        <p class="text-gray-600 mb-4">Diseño único y resistente.</p>
+                        <p class="text-2xl font-bold text-yuli-pink mb-4">RD$6,000</p>
+                        <p class="text-sm text-red-600 font-semibold mb-4">Tiempo de producción: 2-3 semanas</p>
+                        <a href="https://wa.me/18295420597" target="_blank" rel="noopener noreferrer" class="bg-yuli-pink text-white px-6 py-3 rounded-full block text-center hover:bg-pink-700 transition font-medium">Solicitar Pedido</a>
+                    </div>
+                </div>
+
+                <div class="bg-white rounded-xl shadow-xl overflow-hidden transform hover:scale-105 transition duration-300">
+                    <img src="https://nanascraftyhome.com/wp-content/uploads/2021/11/Marjorie-Blanket-1-scaled.jpg" alt="Manta Decorativa" class="w-full h-96 object-cover">
+                    <div class="p-6">
+                        <h3 class="text-2xl font-semibold mb-2">Manta Decorativa</h3>
+                        <p class="text-gray-600 mb-4">Ideal para hogar cálido y acogedor.</p>
+                        <p class="text-2xl font-bold text-yuli-pink mb-4">RD$5,000</p>
+                        <p class="text-sm text-red-600 font-semibold mb-4">Tiempo de producción: 4 semanas</p>
+                        <a href="https://wa.me/18295420597" target="_blank" rel="noopener noreferrer" class="bg-yuli-pink text-white px-6 py-3 rounded-full block text-center hover:bg-pink-700 transition font-medium">Solicitar Pedido</a>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Sobre Yuli -->
+    <section id="sobre" class="py-16 bg-white">
+        <div class="container mx-auto px-6 text-center max-w-4xl">
+            <h2 class="text-4xl md:text-5xl font-bold text-yuli-pink mb-10">Sobre Yuli</h2>
+            <p class="text-lg leading-relaxed text-gray-700">
+                Yuli es una marca dedicada al arte del crochet. Cada prenda nace de horas de dedicación, 
+                seleccionando los mejores materiales para ofrecer piezas únicas, cómodas y llenas de personalidad. 
+                Nos apasiona crear ropa y accesorios que cuenten historias y duren en el tiempo.
+            </p>
+        </div>
+    </section>
+
+    <!-- Contacto -->
+    <section id="contacto" class="py-20 bg-pink-50">
+        <div class="container mx-auto px-6 text-center">
+            <h2 class="text-4xl md:text-5xl font-bold text-yuli-pink mb-10">¡Haz tu Pedido!</h2>
+            <p class="text-xl mb-10 text-gray-700">Contáctanos por WhatsApp o email para personalizar tu prenda o resolver dudas.</p>
+            <div class="space-x-6 mb-12">
+                <!-- BOTÓN DE WHATSAPP -->
+                <a href="https://wa.me/18295420597" 
+                   target="_blank" 
+                   rel="noopener noreferrer"
+                   class="bg-green-600 text-white px-10 py-5 rounded-full text-xl font-medium hover:bg-green-700 transition shadow-lg inline-block">
+                    WhatsApp
+                </a>
+                <!-- BOTÓN DE EMAIL -->
+                <a href="mailto:yulisadelacruz109@gmail.com" 
+                   target="_blank" 
+                   rel="noopener noreferrer"
+                   class="bg-yuli-pink text-white px-10 py-5 rounded-full text-xl font-medium hover:bg-pink-700 transition shadow-lg inline-block">
+                    Email
+                </a>
+                <!-- BOTÓN DE INSTAGRAM -->
+                <a href="https://www.instagram.com/yuli_creation" 
+                   target="_blank" 
+                   rel="noopener noreferrer"
+                   class="bg-instagram text-white px-10 py-5 rounded-full text-xl font-medium hover:opacity-90 transition shadow-lg inline-block">
+                    Instagram
+                </a>
+            </div>
+            <p class="text-lg text-gray-600">Recuerda: Cada pieza es hecha especialmente para ti ✨<br>
+               <strong class="text-red-600">Tiempo de producción: 2-4 semanas</strong>
+            </p>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-yuli-black text-white py-10 text-center">
+        <div class="container mx-auto px-6">
+            <p class="text-lg mb-4">© 2025 Yuli - Prendas Artesanales en Crochet. Hecho con ❤️ a mano en República Dominicana.</p>
+            <div class="space-x-6">
+                <a href="https://wa.me/18295420597" target="_blank" rel="noopener noreferrer" class="hover:opacity-80 transition">WhatsApp</a>
+                <a href="mailto:yulisadelacruz109@gmail.com" target="_blank" rel="noopener noreferrer" class="hover:opacity-80 transition">Email</a>
+                <a href="https://www.instagram.com/yuli_creation" target="_blank" rel="noopener noreferrer" class="hover:opacity-80 transition">Instagram</a>
+            </div>
+        </div>
+    </footer>
+
+</body>
+</html>

@@ -3,205 +3,903 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Yuli - Prendas Artesanales en Crochet</title>
-    <script src="https://cdn.tailwindcss.com"></script>
-    <script>
-        tailwind.config = {
-            theme: {
-                extend: {
-                    colors: {
-                        'yuli-pink': '#FF1493',
-                        'yuli-black': '#000000',
-                        'instagram': '#E4405F',  // Color oficial de Instagram
-                    }
-                }
+    <title>Yuli Creation | Crochet artesanal y pedidos personalizados</title>
+    <meta name="description" content="Yuli Creation crea prendas, accesorios y tejidos en crochet hechos a mano. Descubre vestidos, tops, conjuntos, amigurumis y pedidos personalizados con atención por WhatsApp e Instagram.">
+    <meta name="theme-color" content="#cc3a6b">
+    <meta property="og:title" content="Yuli Creation | Crochet artesanal y pedidos personalizados">
+    <meta property="og:description" content="Piezas tejidas a mano con estilo, detalle y producción personalizada. Haz tu pedido por WhatsApp o visita el Instagram del negocio.">
+    <meta property="og:type" content="website">
+    <meta property="og:image" content="img/yuli-logo.png">
+    <meta property="og:locale" content="es_DO">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Yuli Creation">
+    <meta name="twitter:description" content="Crochet artesanal, diseños personalizados y atención directa por Instagram y WhatsApp.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --rose: #cc3a6b;
+            --rose-dark: #9f244f;
+            --rose-soft: #fff0f4;
+            --peach: #ffd9cc;
+            --sand: #fffaf4;
+            --ink: #24161d;
+            --muted: #6d5560;
+            --line: rgba(36, 22, 29, 0.1);
+            --card: rgba(255, 255, 255, 0.82);
+            --shadow: 0 24px 60px rgba(137, 51, 88, 0.15);
+            --radius-lg: 32px;
+            --radius-md: 22px;
+            --radius-sm: 16px;
+            --max-width: 1180px;
+        }
+
+        * {
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            margin: 0;
+            font-family: "Manrope", sans-serif;
+            color: var(--ink);
+            background:
+                radial-gradient(circle at top left, rgba(255, 217, 204, 0.68), transparent 30%),
+                radial-gradient(circle at top right, rgba(204, 58, 107, 0.12), transparent 24%),
+                linear-gradient(180deg, #fff7f7 0%, #fffdfb 36%, #fff7f2 100%);
+        }
+
+        img {
+            max-width: 100%;
+            display: block;
+        }
+
+        a {
+            color: inherit;
+            text-decoration: none;
+        }
+
+        .container {
+            width: min(calc(100% - 2rem), var(--max-width));
+            margin: 0 auto;
+        }
+
+        .eyebrow {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.6rem;
+            padding: 0.45rem 0.9rem;
+            border-radius: 999px;
+            background: rgba(255, 255, 255, 0.7);
+            border: 1px solid rgba(204, 58, 107, 0.14);
+            color: var(--rose-dark);
+            font-size: 0.9rem;
+            font-weight: 800;
+            letter-spacing: 0.06em;
+            text-transform: uppercase;
+        }
+
+        .eyebrow::before {
+            content: "";
+            width: 0.55rem;
+            height: 0.55rem;
+            border-radius: 999px;
+            background: linear-gradient(135deg, var(--rose), #ff8e7e);
+            box-shadow: 0 0 0 0.25rem rgba(204, 58, 107, 0.12);
+        }
+
+        .section-title {
+            margin: 0.9rem 0 1rem;
+            font-family: "Cormorant Garamond", serif;
+            font-size: clamp(2.6rem, 5vw, 4.8rem);
+            line-height: 0.95;
+            letter-spacing: -0.04em;
+        }
+
+        .section-copy {
+            margin: 0;
+            max-width: 64ch;
+            color: var(--muted);
+            font-size: 1.05rem;
+            line-height: 1.8;
+        }
+
+        .site-header {
+            position: sticky;
+            top: 0;
+            z-index: 20;
+            backdrop-filter: blur(16px);
+            background: rgba(255, 250, 244, 0.76);
+            border-bottom: 1px solid rgba(36, 22, 29, 0.06);
+        }
+
+        .header-bar {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 1rem;
+            padding: 1rem 0;
+        }
+
+        .brand {
+            display: flex;
+            align-items: center;
+            gap: 0.9rem;
+            font-weight: 800;
+            letter-spacing: 0.02em;
+        }
+
+        .brand img {
+            width: 64px;
+            height: 64px;
+            object-fit: contain;
+            filter: drop-shadow(0 12px 24px rgba(204, 58, 107, 0.12));
+        }
+
+        .brand span {
+            font-size: 1.05rem;
+        }
+
+        .nav {
+            display: flex;
+            align-items: center;
+            gap: 1.2rem;
+            flex-wrap: wrap;
+            justify-content: flex-end;
+        }
+
+        .nav a {
+            color: var(--muted);
+            font-weight: 700;
+        }
+
+        .nav a:hover,
+        .nav a:focus-visible {
+            color: var(--rose);
+        }
+
+        .hero {
+            padding: 5.5rem 0 4rem;
+        }
+
+        .hero-grid {
+            display: grid;
+            grid-template-columns: 1.08fr 0.92fr;
+            gap: 2rem;
+            align-items: center;
+        }
+
+        .hero-copy h1 {
+            margin: 1rem 0 1.2rem;
+            font-family: "Cormorant Garamond", serif;
+            font-size: clamp(3.4rem, 8vw, 6.2rem);
+            line-height: 0.92;
+            letter-spacing: -0.05em;
+        }
+
+        .hero-copy p {
+            margin: 0;
+            max-width: 58ch;
+            color: var(--muted);
+            line-height: 1.9;
+            font-size: 1.08rem;
+        }
+
+        .hero-actions {
+            display: flex;
+            gap: 1rem;
+            flex-wrap: wrap;
+            margin-top: 2rem;
+        }
+
+        .button {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            min-height: 56px;
+            padding: 0.95rem 1.4rem;
+            border-radius: 999px;
+            font-weight: 800;
+            transition: transform 0.2s ease, background-color 0.2s ease, color 0.2s ease;
+        }
+
+        .button:hover,
+        .button:focus-visible {
+            transform: translateY(-2px);
+        }
+
+        .button-primary {
+            background: linear-gradient(135deg, var(--rose), #ff8b72);
+            color: #fff;
+            box-shadow: 0 20px 36px rgba(204, 58, 107, 0.24);
+        }
+
+        .button-secondary {
+            border: 1px solid rgba(36, 22, 29, 0.12);
+            background: rgba(255, 255, 255, 0.74);
+            color: var(--ink);
+        }
+
+        .hero-panel {
+            position: relative;
+            border-radius: var(--radius-lg);
+            padding: 2rem;
+            background:
+                linear-gradient(160deg, rgba(255, 255, 255, 0.9), rgba(255, 255, 255, 0.72)),
+                linear-gradient(135deg, rgba(255, 217, 204, 0.46), rgba(204, 58, 107, 0.08));
+            box-shadow: var(--shadow);
+            overflow: hidden;
+        }
+
+        .hero-panel::after {
+            content: "";
+            position: absolute;
+            inset: auto -40px -40px auto;
+            width: 170px;
+            height: 170px;
+            border-radius: 999px;
+            background: radial-gradient(circle, rgba(204, 58, 107, 0.2), transparent 68%);
+        }
+
+        .logo-card {
+            display: grid;
+            gap: 1.4rem;
+            position: relative;
+            z-index: 1;
+        }
+
+        .logo-shell {
+            display: grid;
+            place-items: center;
+            min-height: 280px;
+            border-radius: calc(var(--radius-lg) - 8px);
+            background:
+                linear-gradient(135deg, rgba(255, 240, 244, 0.9), rgba(255, 255, 255, 0.94)),
+                repeating-linear-gradient(135deg, rgba(204, 58, 107, 0.03) 0 12px, rgba(255, 255, 255, 0.08) 12px 24px);
+            border: 1px solid rgba(204, 58, 107, 0.1);
+        }
+
+        .logo-shell img {
+            width: min(100%, 290px);
+            object-fit: contain;
+        }
+
+        .mini-stats {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 0.9rem;
+        }
+
+        .mini-stats article {
+            padding: 1rem;
+            border-radius: var(--radius-sm);
+            background: rgba(255, 255, 255, 0.72);
+            border: 1px solid rgba(36, 22, 29, 0.06);
+        }
+
+        .mini-stats strong {
+            display: block;
+            margin-bottom: 0.35rem;
+            font-size: 1.4rem;
+            color: var(--rose-dark);
+        }
+
+        .mini-stats span {
+            color: var(--muted);
+            font-size: 0.92rem;
+            line-height: 1.5;
+        }
+
+        .section {
+            padding: 5rem 0;
+        }
+
+        .split {
+            display: grid;
+            grid-template-columns: 0.88fr 1.12fr;
+            gap: 2rem;
+            align-items: start;
+        }
+
+        .cards {
+            display: grid;
+            grid-template-columns: repeat(3, minmax(0, 1fr));
+            gap: 1.25rem;
+        }
+
+        .card {
+            border-radius: var(--radius-md);
+            padding: 1.5rem;
+            background: var(--card);
+            border: 1px solid rgba(36, 22, 29, 0.08);
+            box-shadow: 0 18px 40px rgba(36, 22, 29, 0.06);
+        }
+
+        .card strong {
+            display: block;
+            margin-bottom: 0.55rem;
+            font-size: 1.2rem;
+        }
+
+        .card p {
+            margin: 0;
+            color: var(--muted);
+            line-height: 1.7;
+        }
+
+        .catalog-grid {
+            display: grid;
+            grid-template-columns: repeat(3, minmax(0, 1fr));
+            gap: 1.25rem;
+            margin-top: 2rem;
+        }
+
+        .catalog-card {
+            border-radius: var(--radius-lg);
+            overflow: hidden;
+            background: rgba(255, 255, 255, 0.86);
+            border: 1px solid rgba(36, 22, 29, 0.08);
+            box-shadow: var(--shadow);
+            display: flex;
+            flex-direction: column;
+            content-visibility: auto;
+        }
+
+        .catalog-media {
+            aspect-ratio: 4 / 5;
+            overflow: hidden;
+            background: #f7ecef;
+        }
+
+        .catalog-media img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .catalog-body {
+            display: grid;
+            gap: 1rem;
+            padding: 1.35rem;
+        }
+
+        .catalog-card strong {
+            display: block;
+            margin-bottom: 0.45rem;
+            font-size: 1.3rem;
+        }
+
+        .catalog-card p,
+        .catalog-card li {
+            margin: 0;
+            color: var(--muted);
+            line-height: 1.7;
+        }
+
+        .tag {
+            display: inline-flex;
+            align-items: center;
+            align-self: flex-start;
+            padding: 0.45rem 0.7rem;
+            border-radius: 999px;
+            background: rgba(255, 255, 255, 0.85);
+            color: var(--rose-dark);
+            border: 1px solid rgba(204, 58, 107, 0.12);
+            font-size: 0.86rem;
+            font-weight: 800;
+        }
+
+        .catalog-card ul {
+            margin: 0;
+            padding-left: 1.2rem;
+        }
+
+        .catalog-actions {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.75rem;
+        }
+
+        .catalog-link {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            padding: 0.8rem 1rem;
+            border-radius: 999px;
+            background: rgba(36, 22, 29, 0.06);
+            color: var(--rose-dark);
+            font-weight: 800;
+        }
+
+        .catalog-link:hover,
+        .catalog-link:focus-visible {
+            background: rgba(204, 58, 107, 0.12);
+        }
+
+        .instagram-panel {
+            margin-top: 2rem;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1.25rem;
+        }
+
+        .instagram-box,
+        .faq,
+        .contact-card {
+            padding: 1.6rem;
+            border-radius: var(--radius-lg);
+            background: rgba(255, 255, 255, 0.82);
+            border: 1px solid rgba(36, 22, 29, 0.08);
+            box-shadow: var(--shadow);
+        }
+
+        .instagram-box h3,
+        .faq h3,
+        .contact-card h3 {
+            margin-top: 0;
+            margin-bottom: 0.9rem;
+            font-size: 1.35rem;
+        }
+
+        .instagram-box p,
+        .faq p,
+        .contact-card p,
+        .contact-list li {
+            color: var(--muted);
+            line-height: 1.8;
+        }
+
+        .instagram-preview {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 0.9rem;
+            margin-top: 1.2rem;
+        }
+
+        .preview-tile {
+            min-height: 130px;
+            border-radius: var(--radius-sm);
+            padding: 1rem;
+            display: flex;
+            align-items: end;
+            color: #fff;
+            font-weight: 700;
+            background: var(--tile-gradient);
+        }
+
+        .faq-grid,
+        .contact-grid {
+            display: grid;
+            grid-template-columns: repeat(2, minmax(0, 1fr));
+            gap: 1.25rem;
+            margin-top: 2rem;
+        }
+
+        .contact-list {
+            margin: 1rem 0 0;
+            padding-left: 1.2rem;
+        }
+
+        .footer {
+            padding: 2rem 0 3rem;
+            color: var(--muted);
+        }
+
+        .footer-inner {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 1rem;
+            flex-wrap: wrap;
+            border-top: 1px solid rgba(36, 22, 29, 0.08);
+            padding-top: 1.5rem;
+        }
+
+        .footer-links {
+            display: flex;
+            gap: 1rem;
+            flex-wrap: wrap;
+        }
+
+        @media (max-width: 980px) {
+            .hero-grid,
+            .split,
+            .instagram-panel,
+            .faq-grid,
+            .contact-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .cards {
+                grid-template-columns: 1fr;
+            }
+
+            .catalog-grid {
+                grid-template-columns: 1fr;
             }
         }
-    </script>
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
-    <style>
-        .logo-hover {
-            transition: transform 0.3s ease;
+
+        @media (max-width: 720px) {
+            .header-bar,
+            .nav,
+            .hero-actions,
+            .footer-inner {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+
+            .mini-stats,
+            .instagram-preview {
+                grid-template-columns: 1fr;
+            }
+
+            .hero {
+                padding-top: 3.5rem;
+            }
+
+            .button {
+                width: 100%;
+            }
+
+            .brand span {
+                font-size: 0.95rem;
+            }
         }
-        .logo-hover:hover {
-            transform: scale(1.1);
+
+        @media (prefers-reduced-motion: reduce) {
+            html {
+                scroll-behavior: auto;
+            }
+
+            *,
+            *::before,
+            *::after {
+                animation-duration: 0.01ms !important;
+                animation-iteration-count: 1 !important;
+                transition-duration: 0.01ms !important;
+            }
         }
     </style>
 </head>
-<body class="bg-white text-gray-800 font-sans">
-
-    <!-- Header con Logo Local -->
-    <header class="bg-white shadow-md sticky top-0 z-50">
-        <div class="container mx-auto px-6 py-4 flex justify-between items-center">
-            <a href="#inicio" class="block logo-hover">
-                <img src="img/yuli-logo.png" 
-                     alt="Yuli - Prendas Artesanales en Crochet" 
-                     class="h-14 md:h-18 object-contain">
+<body>
+    <header class="site-header">
+        <div class="container header-bar">
+            <a class="brand" href="#inicio" aria-label="Ir al inicio de Yuli Creation">
+                <img src="img/yuli-logo.png" alt="Logo de Yuli Creation" width="64" height="64">
+                <span>Yuli Creation</span>
             </a>
-            <nav class="space-x-6 md:space-x-8 text-lg">
-                <a href="#inicio" class="hover:text-yuli-pink transition">Inicio</a>
-                <a href="#catalogo" class="hover:text-yuli-pink transition">Catálogo</a>
-                <a href="#sobre" class="hover:text-yuli-pink transition">Sobre Yuli</a>
-                <a href="#contacto" class="hover:text-yuli-pink transition">Contacto</a>
+            <nav class="nav" aria-label="Principal">
+                <a href="#colecciones">Catálogo</a>
+                <a href="#propuesta">Comprar</a>
+                <a href="#instagram">Instagram</a>
+                <a href="#pedidos">Pedidos</a>
             </nav>
         </div>
     </header>
 
-    <!-- Hero Section -->
-    <section id="inicio" class="bg-gradient-to-b from-pink-50 to-white py-20 text-center">
-        <div class="container mx-auto px-6">
-            <div class="mb-10 logo-hover inline-block">
-                <img src="img/yuli-logo.png" 
-                     alt="Yuli Crochet" 
-                     class="h-40 md:h-56 mx-auto object-contain drop-shadow-lg">
+    <main id="main-content">
+        <section class="hero" id="inicio">
+            <div class="container hero-grid">
+                <div class="hero-copy">
+                    <span class="eyebrow">Catálogo artesanal</span>
+                    <h1>Catálogo y pedidos de crochet hechos a mano.</h1>
+                    <p>
+                        Yuli Creation es el espacio donde puedes descubrir colecciones en crochet, elegir tu estilo
+                        favorito y pedir piezas hechas a mano con atención personalizada. La web está pensada para
+                        mostrar la oferta de la marca y llevarte directo a la compra.
+                    </p>
+                    <div class="hero-actions">
+                        <a class="button button-primary" href="#colecciones">Ver catálogo</a>
+                        <a class="button button-secondary" href="https://wa.me/18295420597" target="_blank" rel="noopener noreferrer">Comprar por WhatsApp</a>
+                    </div>
+                </div>
+
+                <aside class="hero-panel" aria-label="Resumen del negocio">
+                    <div class="logo-card">
+                        <div class="logo-shell">
+                            <img src="img/yuli-logo.png" alt="Identidad visual de Yuli Creation" width="290" height="290" loading="eager">
+                        </div>
+                        <div class="mini-stats">
+                            <article>
+                                <strong>100%</strong>
+                                <span>Trabajo artesanal y atención personalizada.</span>
+                            </article>
+                            <article>
+                                <strong>2-4</strong>
+                                <span>Semanas de producción según la complejidad.</span>
+                            </article>
+                            <article>
+                                <strong>DM + WA</strong>
+                                <span>Pedidos y consultas por Instagram o WhatsApp.</span>
+                            </article>
+                        </div>
+                    </div>
+                </aside>
             </div>
-            <p class="text-2xl md:text-3xl font-light mb-8 text-gray-700">Prendas artesanales en crochet hechas con amor</p>
-            <p class="text-lg max-w-2xl mx-auto mb-10 text-gray-600">
-                Cada pieza es única, creada a mano con hilos de calidad. 
-                <strong class="text-red-600">Tiempo de producción: 2 a 4 semanas.</strong>
-            </p>
-            <a href="#catalogo" class="bg-yuli-pink text-white px-10 py-5 rounded-full text-xl font-medium hover:bg-pink-700 transition shadow-lg">
-                Ver Catálogo
-            </a>
-        </div>
-    </section>
+        </section>
 
-    <!-- Catálogo-->
-    <section id="catalogo" class="py-16 bg-gray-50">
-        <div class="container mx-auto px-6">
-            <h2 class="text-4xl md:text-5xl font-bold text-yuli-pink text-center mb-12">Nuestro Catálogo</h2>
-            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10">
-
-                <!-- Producto 1 -->
-                <div class="bg-white rounded-xl shadow-xl overflow-hidden transform hover:scale-105 transition duration-300">
-                    <img src="https://i.etsystatic.com/20792826/r/il/8b23cc/2025503933/il_570xN.2025503933_jqv8.jpg" alt="Vestido rosa en crochet" class="w-full h-96 object-cover">
-                    <div class="p-6">
-                        <h3 class="text-2xl font-semibold mb-2">Vestido Rosa Elegante</h3>
-                        <p class="text-gray-600 mb-4">Vestido infantil o adulto hecho a mano con hilo premium. Disponible en varias tallas.</p>
-                        <p class="text-2xl font-bold text-yuli-pink mb-4">RD$15,000</p>
-                        <p class="text-sm text-red-600 font-semibold mb-4">Tiempo de producción: 2-4 semanas</p>
-                        <a href="https://wa.me/18295420597" target="_blank" rel="noopener noreferrer" class="bg-yuli-pink text-white px-6 py-3 rounded-full block text-center hover:bg-pink-700 transition font-medium">Solicitar Pedido</a>
-                    </div>
+        <section class="section" id="propuesta">
+            <div class="container split">
+                <div>
+                    <span class="eyebrow">Comprar en Yuli</span>
+                    <h2 class="section-title">Una web pensada para elegir, consultar y comprar.</h2>
+                    <p class="section-copy">
+                        Esta página funciona como catálogo digital de la marca. Aquí la clienta puede ver tipos de
+                        productos, identificar lo que quiere, conocer tiempos de producción y pasar de inmediato a la
+                        cotización o al pedido.
+                    </p>
                 </div>
-
-                <!-- Producto 2 al 6 (igual que antes) -->
-            
-                <div class="bg-white rounded-xl shadow-xl overflow-hidden transform hover:scale-105 transition duration-300">
-                    <img src="https://www.mermaidcatdesigns.com/cdn/shop/products/crochet-top-pattern-luna-506777.jpg?v=1702342271&width=1946" alt="Top rosa elegante" class="w-full h-96 object-cover">
-                    <div class="p-6">
-                        <h3 class="text-2xl font-semibold mb-2">Top Rosa Elegante</h3>
-                        <p class="text-gray-600 mb-4">Blusa ligera y fresca, perfecta para cualquier ocasión.</p>
-                        <p class="text-2xl font-bold text-yuli-pink mb-4">RD$6,000</p>
-                        <p class="text-sm text-red-600 font-semibold mb-4">Tiempo de producción: 2-4 semanas</p>
-                        <a href="https://wa.me/18295420597" target="_blank" rel="noopener noreferrer" class="bg-yuli-pink text-white px-6 py-3 rounded-full block text-center hover:bg-pink-700 transition font-medium">Solicitar Pedido</a>
-                    </div>
+                <div class="cards">
+                    <article class="card">
+                        <strong>Catálogo claro</strong>
+                        <p>Las colecciones están organizadas para que sea fácil explorar prendas, accesorios, regalos y piezas especiales.</p>
+                    </article>
+                    <article class="card">
+                        <strong>Pedidos personalizados</strong>
+                        <p>Puedes solicitar cambios de color, talla y estilo según el tipo de pieza que quieras encargar.</p>
+                    </article>
+                    <article class="card">
+                        <strong>Punto de venta directo</strong>
+                        <p>La web conecta con WhatsApp, email e Instagram para convertir la visita en una conversación de compra.</p>
+                    </article>
                 </div>
-
-                <div class="bg-white rounded-xl shadow-xl overflow-hidden transform hover:scale-105 transition duration-300">
-                    <img src="https://hips.hearstapps.com/hmg-prod/images/1-summer-2023-crochet-index-647deb6d8a278.jpg?crop=0.6666666666666666xw:1xh;center,top&resize=1200:*" alt="Conjunto Verano" class="w-full h-96 object-cover">
-                    <div class="p-6">
-                        <h3 class="text-2xl font-semibold mb-2">Conjunto Verano</h3>
-                        <p class="text-gray-600 mb-4">Top y falda coordinados en tonos vibrantes.</p>
-                        <p class="text-2xl font-bold text-yuli-pink mb-4">RD$18,000</p>
-                        <p class="text-sm text-red-600 font-semibold mb-4">Tiempo de producción: 3-4 semanas</p>
-                        <a href="https://wa.me/18295420597" target="_blank" rel="noopener noreferrer" class="bg-yuli-pink text-white px-6 py-3 rounded-full block text-center hover:bg-pink-700 transition font-medium">Solicitar Pedido</a>
-                    </div>
-                </div>
-
-                <div class="bg-white rounded-xl shadow-xl overflow-hidden transform hover:scale-105 transition duration-300">
-                    <img src="https://chaicoffeecrochet.com/wp-content/uploads/2024/01/Kozu-Palm-Pets.jpg" alt="Amigurumi Animalitos" class="w-full h-96 object-cover">
-                    <div class="p-6">
-                        <h3 class="text-2xl font-semibold mb-2">Amigurumi Animalitos</h3>
-                        <p class="text-gray-600 mb-4">Juguetes adorables y seguros para niños.</p>
-                        <p class="text-2xl font-bold text-yuli-pink mb-4">RD$2,000 c/u</p>
-                        <p class="text-sm text-red-600 font-semibold mb-4">Tiempo de producción: 2 semanas</p>
-                        <a href="https://wa.me/18295420597" target="_blank" rel="noopener noreferrer" class="bg-yuli-pink text-white px-6 py-3 rounded-full block text-center hover:bg-pink-700 transition font-medium">Solicitar Pedido</a>
-                    </div>
-                </div>
-
-                <div class="bg-white rounded-xl shadow-xl overflow-hidden transform hover:scale-105 transition duration-300">
-                    <img src="https://yourcrochet.com/wp-content/uploads/2023/10/65ee0723-0-mushroom-bag.jpg" alt="Bolso Artesanal" class="w-full h-96 object-cover">
-                    <div class="p-6">
-                        <h3 class="text-2xl font-semibold mb-2">Bolso Artesanal</h3>
-                        <p class="text-gray-600 mb-4">Diseño único y resistente.</p>
-                        <p class="text-2xl font-bold text-yuli-pink mb-4">RD$6,000</p>
-                        <p class="text-sm text-red-600 font-semibold mb-4">Tiempo de producción: 2-3 semanas</p>
-                        <a href="https://wa.me/18295420597" target="_blank" rel="noopener noreferrer" class="bg-yuli-pink text-white px-6 py-3 rounded-full block text-center hover:bg-pink-700 transition font-medium">Solicitar Pedido</a>
-                    </div>
-                </div>
-
-                <div class="bg-white rounded-xl shadow-xl overflow-hidden transform hover:scale-105 transition duration-300">
-                    <img src="https://nanascraftyhome.com/wp-content/uploads/2021/11/Marjorie-Blanket-1-scaled.jpg" alt="Manta Decorativa" class="w-full h-96 object-cover">
-                    <div class="p-6">
-                        <h3 class="text-2xl font-semibold mb-2">Manta Decorativa</h3>
-                        <p class="text-gray-600 mb-4">Ideal para hogar cálido y acogedor.</p>
-                        <p class="text-2xl font-bold text-yuli-pink mb-4">RD$5,000</p>
-                        <p class="text-sm text-red-600 font-semibold mb-4">Tiempo de producción: 4 semanas</p>
-                        <a href="https://wa.me/18295420597" target="_blank" rel="noopener noreferrer" class="bg-yuli-pink text-white px-6 py-3 rounded-full block text-center hover:bg-pink-700 transition font-medium">Solicitar Pedido</a>
-                    </div>
-                </div>
-
             </div>
-        </div>
-    </section>
+        </section>
 
-    <!-- Sobre Yuli -->
-    <section id="sobre" class="py-16 bg-white">
-        <div class="container mx-auto px-6 text-center max-w-4xl">
-            <h2 class="text-4xl md:text-5xl font-bold text-yuli-pink mb-10">Sobre Yuli</h2>
-            <p class="text-lg leading-relaxed text-gray-700">
-                Yuli es una marca dedicada al arte del crochet. Cada prenda nace de horas de dedicación, 
-                seleccionando los mejores materiales para ofrecer piezas únicas, cómodas y llenas de personalidad. 
-                Nos apasiona crear ropa y accesorios que cuenten historias y duren en el tiempo.
-            </p>
-        </div>
-    </section>
+        <section class="section" id="colecciones">
+            <div class="container">
+                <span class="eyebrow">Catálogo</span>
+                <h2 class="section-title">Explora diseños reales de Yuli Creation.</h2>
+                <p class="section-copy">
+                    Este catálogo ahora muestra fotografías reales de la marca para que puedas ver mejor cada diseño,
+                    abrir su publicación en Instagram y pedir la pieza que más te guste por WhatsApp.
+                </p>
 
-    <!-- Contacto -->
-    <section id="contacto" class="py-20 bg-pink-50">
-        <div class="container mx-auto px-6 text-center">
-            <h2 class="text-4xl md:text-5xl font-bold text-yuli-pink mb-10">¡Haz tu Pedido!</h2>
-            <p class="text-xl mb-10 text-gray-700">Contáctanos por WhatsApp o email para personalizar tu prenda o resolver dudas.</p>
-            <div class="space-x-6 mb-12">
-                <!-- BOTÓN DE WHATSAPP -->
-                <a href="https://wa.me/18295420597" 
-                   target="_blank" 
-                   rel="noopener noreferrer"
-                   class="bg-green-600 text-white px-10 py-5 rounded-full text-xl font-medium hover:bg-green-700 transition shadow-lg inline-block">
-                    WhatsApp
-                </a>
-                <!-- BOTÓN DE EMAIL -->
-                <a href="mailto:yulisadelacruz109@gmail.com" 
-                   target="_blank" 
-                   rel="noopener noreferrer"
-                   class="bg-yuli-pink text-white px-10 py-5 rounded-full text-xl font-medium hover:bg-pink-700 transition shadow-lg inline-block">
-                    Email
-                </a>
-                <!-- BOTÓN DE INSTAGRAM -->
-                <a href="https://www.instagram.com/yuli_creation" 
-                   target="_blank" 
-                   rel="noopener noreferrer"
-                   class="bg-instagram text-white px-10 py-5 rounded-full text-xl font-medium hover:opacity-90 transition shadow-lg inline-block">
-                    Instagram
-                </a>
+                <div class="catalog-grid">
+                    <article class="catalog-card">
+                        <div class="catalog-media">
+                            <img src="img/WhatsApp Image 2026-01-06 at 12.21.40 PM.jpeg" alt="Vestido largo amarillo tejido en crochet de Yuli Creation" loading="lazy">
+                        </div>
+                        <div class="catalog-body">
+                            <div>
+                                <span class="tag">Vestido</span>
+                                <strong>Vestido largo amarillo</strong>
+                                <p>Diseño ajustado de manga larga con detalles frontales y acabado elegante para una presencia llamativa.</p>
+                            </div>
+                            <ul>
+                                <li>Hecho a mano en crochet.</li>
+                                <li>Disponible por encargo.</li>
+                                <li>Ideal para sesiones, viajes o eventos especiales.</li>
+                            </ul>
+                            <div class="catalog-actions">
+                                <a class="catalog-link" href="https://www.instagram.com/p/DPmKnKjgHnf/?img_index=1" target="_blank" rel="noopener noreferrer">Ver publicación</a>
+                                <a class="catalog-link" href="https://wa.me/18295420597?text=Hola%2C%20quiero%20cotizar%20el%20vestido%20largo%20amarillo%20de%20Yuli%20Creation." target="_blank" rel="noopener noreferrer">Pedir este diseño</a>
+                            </div>
+                        </div>
+                    </article>
+
+                    <article class="catalog-card">
+                        <div class="catalog-media">
+                            <img src="img/WhatsApp Image 2026-01-06 at 12.21.40 PM (1).jpeg" alt="Vista alternativa del vestido amarillo tejido en crochet" loading="lazy">
+                        </div>
+                        <div class="catalog-body">
+                            <div>
+                                <span class="tag">Vestido</span>
+                                <strong>Vestido amarillo vista editorial</strong>
+                                <p>Otra vista del mismo diseño para apreciar mejor la textura, el fit y la caída de la pieza.</p>
+                            </div>
+                            <ul>
+                                <li>Perfecto para ver el trabajo artesanal en detalle.</li>
+                                <li>Se puede consultar en otros colores.</li>
+                            </ul>
+                            <div class="catalog-actions">
+                                <a class="catalog-link" href="https://www.instagram.com/p/DOHuN0AgAiy/?img_index=1" target="_blank" rel="noopener noreferrer">Ver publicación</a>
+                                <a class="catalog-link" href="https://wa.me/18295420597?text=Hola%2C%20quiero%20m%C3%A1s%20informaci%C3%B3n%20sobre%20el%20vestido%20amarillo%20de%20Yuli%20Creation." target="_blank" rel="noopener noreferrer">Consultar diseño</a>
+                            </div>
+                        </div>
+                    </article>
+
+                    <article class="catalog-card">
+                        <div class="catalog-media">
+                            <img src="img/WhatsApp Image 2026-01-06 at 12.21.41 PM (2).jpeg" alt="Vestido amarillo en crochet apoyado en árbol" loading="lazy">
+                        </div>
+                        <div class="catalog-body">
+                            <div>
+                                <span class="tag">Vestido</span>
+                                <strong>Vestido amarillo tropical</strong>
+                                <p>Versión del vestido en un entorno exterior para mostrar cómo luce en un contexto fresco y vacacional.</p>
+                            </div>
+                            <ul>
+                                <li>Diseño protagonista y muy fotogénico.</li>
+                                <li>Pedido por encargo según talla.</li>
+                            </ul>
+                            <div class="catalog-actions">
+                                <a class="catalog-link" href="https://www.instagram.com/p/DIEshbBgYrG/?img_index=1" target="_blank" rel="noopener noreferrer">Ver publicación</a>
+                                <a class="catalog-link" href="https://wa.me/18295420597?text=Hola%2C%20quiero%20cotizar%20el%20vestido%20amarillo%20tropical%20de%20Yuli%20Creation." target="_blank" rel="noopener noreferrer">Pedir este diseño</a>
+                            </div>
+                        </div>
+                    </article>
+
+                    <article class="catalog-card">
+                        <div class="catalog-media">
+                            <img src="img/WhatsApp Image 2026-01-06 at 12.21.41 PM.jpeg" alt="Conjunto blanco en crochet con top halter y falda" loading="lazy">
+                        </div>
+                        <div class="catalog-body">
+                            <div>
+                                <span class="tag">Conjunto</span>
+                                <strong>Conjunto blanco halter</strong>
+                                <p>Top con flor protagonista y falda tejida con textura y flecos para un look sofisticado y artesanal.</p>
+                            </div>
+                            <ul>
+                                <li>Diseño femenino y elegante.</li>
+                                <li>Ideal para resort, playa o eventos especiales.</li>
+                            </ul>
+                            <div class="catalog-actions">
+                                <a class="catalog-link" href="https://www.instagram.com/p/DEsmXDapSLQ/?img_index=1" target="_blank" rel="noopener noreferrer">Ver publicación</a>
+                                <a class="catalog-link" href="https://wa.me/18295420597?text=Hola%2C%20quiero%20cotizar%20el%20conjunto%20blanco%20halter%20de%20Yuli%20Creation." target="_blank" rel="noopener noreferrer">Pedir este diseño</a>
+                            </div>
+                        </div>
+                    </article>
+
+                    <article class="catalog-card">
+                        <div class="catalog-media">
+                            <img src="img/WhatsApp Image 2026-01-06 at 12.21.41 PM (3).jpeg" alt="Conjunto blanco tejido en crochet en interior" loading="lazy">
+                        </div>
+                        <div class="catalog-body">
+                            <div>
+                                <span class="tag">Conjunto</span>
+                                <strong>Conjunto blanco vista interior</strong>
+                                <p>Toma más cercana para resaltar la flor del top, el patrón del tejido y el acabado de la falda.</p>
+                            </div>
+                            <ul>
+                                <li>Ideal para apreciar detalles del diseño.</li>
+                                <li>Disponible bajo pedido personalizado.</li>
+                            </ul>
+                            <div class="catalog-actions">
+                                <a class="catalog-link" href="https://www.instagram.com/p/DFBWjtNpotQ/?img_index=1" target="_blank" rel="noopener noreferrer">Ver publicación</a>
+                                <a class="catalog-link" href="https://wa.me/18295420597?text=Hola%2C%20quiero%20m%C3%A1s%20informaci%C3%B3n%20sobre%20el%20conjunto%20blanco%20de%20Yuli%20Creation." target="_blank" rel="noopener noreferrer">Consultar diseño</a>
+                            </div>
+                        </div>
+                    </article>
+
+                    <article class="catalog-card">
+                        <div class="catalog-media">
+                            <img src="img/WhatsApp Image 2026-01-06 at 12.21.42 PM.jpeg" alt="Detalle del top blanco tejido en crochet con flor central" loading="lazy">
+                        </div>
+                        <div class="catalog-body">
+                            <div>
+                                <span class="tag">Detalle</span>
+                                <strong>Top blanco con flor</strong>
+                                <p>Detalle del escote y la textura del top para mostrar mejor el trabajo manual y el acabado de la pieza.</p>
+                            </div>
+                            <ul>
+                                <li>Referencia ideal para pedidos personalizados.</li>
+                                <li>Puede adaptarse a distintos estilos y combinaciones.</li>
+                            </ul>
+                            <div class="catalog-actions">
+                                <a class="catalog-link" href="https://www.instagram.com/p/C9NriyQuGR1/?img_index=1" target="_blank" rel="noopener noreferrer">Ver publicación</a>
+                                <a class="catalog-link" href="https://wa.me/18295420597?text=Hola%2C%20quiero%20cotizar%20el%20top%20blanco%20con%20flor%20de%20Yuli%20Creation." target="_blank" rel="noopener noreferrer">Pedir este diseño</a>
+                            </div>
+                        </div>
+                    </article>
+                </div>
             </div>
-            <p class="text-lg text-gray-600">Recuerda: Cada pieza es hecha especialmente para ti ✨<br>
-               <strong class="text-red-600">Tiempo de producción: 2-4 semanas</strong>
-            </p>
-        </div>
-    </section>
+        </section>
 
-    <!-- Footer -->
-    <footer class="bg-yuli-black text-white py-10 text-center">
-        <div class="container mx-auto px-6">
-            <p class="text-lg mb-4">© 2025 Yuli - Prendas Artesanales en Crochet. Hecho con ❤️ a mano en República Dominicana.</p>
-            <div class="space-x-6">
-                <a href="https://wa.me/18295420597" target="_blank" rel="noopener noreferrer" class="hover:opacity-80 transition">WhatsApp</a>
-                <a href="mailto:yulisadelacruz109@gmail.com" target="_blank" rel="noopener noreferrer" class="hover:opacity-80 transition">Email</a>
-                <a href="https://www.instagram.com/yuli_creation" target="_blank" rel="noopener noreferrer" class="hover:opacity-80 transition">Instagram</a>
+        <section class="section" id="instagram">
+            <div class="container">
+                <span class="eyebrow">Instagram</span>
+                <h2 class="section-title">Descubre más creaciones y referencias en @yuli_creation.</h2>
+                <p class="section-copy">
+                    Si quieres ver más estilos, detalles y piezas terminadas, visita el Instagram de Yuli Creation.
+                    Allí podrás inspirarte, conocer mejor el trabajo de la marca y escribir directamente para hacer tu pedido.
+                </p>
+
+                <div class="instagram-panel">
+                    <article class="instagram-box">
+                        <h3>Lo que encontrarás en el perfil</h3>
+                        <p>Publicaciones con diseños en crochet, ideas para pedidos personalizados y detalles de piezas hechas a mano con el estilo de Yuli Creation.</p>
+                        <div class="instagram-preview">
+                            <div class="preview-tile" style="--tile-gradient: linear-gradient(135deg, #cc3a6b, #ff8f78);">Prendas tejidas</div>
+                            <div class="preview-tile" style="--tile-gradient: linear-gradient(135deg, #f38a64, #ffd27d);">Pedidos especiales</div>
+                            <div class="preview-tile" style="--tile-gradient: linear-gradient(135deg, #db4f87, #ffb0a4);">Detalles a mano</div>
+                            <div class="preview-tile" style="--tile-gradient: linear-gradient(135deg, #f1a85d, #f8dd9f);">Inspiración y contacto</div>
+                        </div>
+                    </article>
+
+                    <article class="instagram-box">
+                        <h3>Haz tu pedido con más confianza</h3>
+                        <p>Explora el perfil, guarda tus referencias favoritas y luego escribe por Instagram, WhatsApp o email para cotizar tu pieza ideal.</p>
+                        <div class="hero-actions">
+                            <a class="button button-primary" href="https://www.instagram.com/yuli_creation/" target="_blank" rel="noopener noreferrer">Abrir @yuli_creation</a>
+                            <a class="button button-secondary" href="mailto:yulisadelacruz109@gmail.com">Escribir por email</a>
+                        </div>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <section class="section" id="pedidos">
+            <div class="container">
+                <span class="eyebrow">Pedidos</span>
+                <h2 class="section-title">Haz tu pedido con Yuli Creation.</h2>
+                <p class="section-copy">
+                    Si ya elegiste un diseño o quieres cotizar una pieza personalizada, aquí encontrarás la información
+                    básica para escribir y comenzar tu pedido.
+                </p>
+
+                <div class="faq-grid">
+                    <article class="faq">
+                        <h3>¿Cuánto tarda un pedido?</h3>
+                        <p>La producción habitual es de 2 a 4 semanas. El tiempo final puede variar según el tamaño de la pieza, la complejidad y la agenda de pedidos activos.</p>
+                    </article>
+                    <article class="faq">
+                        <h3>¿Se aceptan personalizaciones?</h3>
+                        <p>Sí. Puedes solicitar ajustes de color, talla, estilo y compartir referencias visuales según el diseño.</p>
+                    </article>
+                    <article class="faq">
+                        <h3>¿Por dónde puedo hacer mi pedido?</h3>
+                        <p>Puedes escribir por WhatsApp, Instagram o email, según el canal que te resulte más cómodo.</p>
+                    </article>
+                    <article class="faq">
+                        <h3>¿Qué tipos de piezas maneja Yuli?</h3>
+                        <p>Prendas en crochet, accesorios, amigurumis, tejidos decorativos y pedidos especiales hechos a mano.</p>
+                    </article>
+                </div>
+
+                <div class="contact-grid">
+                    <article class="contact-card">
+                        <h3>Canales de contacto</h3>
+                        <p>Comparte tu idea, foto de referencia o diseño favorito y recibe atención directa para tu pedido.</p>
+                        <ul class="contact-list">
+                            <li>WhatsApp: <a href="https://wa.me/18295420597" target="_blank" rel="noopener noreferrer">+1 (829) 542-0597</a></li>
+                            <li>Email: <a href="mailto:yulisadelacruz109@gmail.com">yulisadelacruz109@gmail.com</a></li>
+                            <li>Instagram: <a href="https://www.instagram.com/yuli_creation/" target="_blank" rel="noopener noreferrer">@yuli_creation</a></li>
+                        </ul>
+                    </article>
+
+                    <article class="contact-card">
+                        <h3>Comienza tu pedido</h3>
+                        <p>Escríbenos para cotizar tu diseño, consultar colores, tallas y disponibilidad.</p>
+                        <div class="hero-actions">
+                            <a class="button button-primary" href="https://wa.me/18295420597?text=Hola%2C%20quiero%20cotizar%20una%20pieza%20de%20Yuli%20Creation." target="_blank" rel="noopener noreferrer">Pedir por WhatsApp</a>
+                        </div>
+                    </article>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <div class="container footer-inner">
+            <p>© 2026 Yuli Creation. Crochet artesanal, pedidos personalizados y atención directa.</p>
+            <div class="footer-links">
+                <a href="#inicio">Inicio</a>
+                <a href="https://www.instagram.com/yuli_creation/" target="_blank" rel="noopener noreferrer">Instagram</a>
+                <a href="https://wa.me/18295420597" target="_blank" rel="noopener noreferrer">WhatsApp</a>
+                <a href="mailto:yulisadelacruz109@gmail.com">Email</a>
             </div>
         </div>
     </footer>
 
+    <script type="application/ld+json">
+        {
+            "@context": "https://schema.org",
+            "@type": "LocalBusiness",
+            "name": "Yuli Creation",
+            "image": "img/yuli-logo.png",
+            "description": "Negocio de crochet artesanal con pedidos personalizados de prendas, accesorios y tejidos hechos a mano.",
+            "email": "yulisadelacruz109@gmail.com",
+            "telephone": "+18295420597",
+            "url": "https://www.instagram.com/yuli_creation/",
+            "sameAs": [
+                "https://www.instagram.com/yuli_creation/"
+            ]
+        }
+    </script>
 </body>
 </html>

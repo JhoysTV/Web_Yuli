@@ -47,6 +47,7 @@
             margin: 0;
             font-family: "Manrope", sans-serif;
             color: var(--ink);
+            overflow-x: hidden;
             background:
                 radial-gradient(circle at top left, rgba(255, 217, 204, 0.68), transparent 30%),
                 radial-gradient(circle at top right, rgba(204, 58, 107, 0.12), transparent 24%),
@@ -171,6 +172,15 @@
             grid-template-columns: 1.08fr 0.92fr;
             gap: 2rem;
             align-items: center;
+        }
+
+        .hero-copy,
+        .hero-panel,
+        .catalog-card,
+        .instagram-box,
+        .faq,
+        .contact-card {
+            min-width: 0;
         }
 
         .hero-copy h1 {
@@ -484,6 +494,10 @@
             padding-left: 1.2rem;
         }
 
+        .contact-list a {
+            overflow-wrap: anywhere;
+        }
+
         .footer {
             padding: 2rem 0 3rem;
             color: var(--muted);
@@ -519,34 +533,159 @@
             }
 
             .catalog-grid {
-                grid-template-columns: 1fr;
+                grid-template-columns: repeat(2, minmax(0, 1fr));
+            }
+
+            .hero {
+                padding: 4.5rem 0 3.5rem;
+            }
+
+            .hero-panel {
+                padding: 1.5rem;
+            }
+
+            .logo-shell {
+                min-height: 240px;
+            }
+
+            .section {
+                padding: 4rem 0;
             }
         }
 
         @media (max-width: 720px) {
+            .site-header {
+                position: static;
+            }
+
             .header-bar,
             .nav,
             .hero-actions,
-            .footer-inner {
+            .footer-inner,
+            .catalog-actions {
                 flex-direction: column;
                 align-items: flex-start;
             }
 
             .mini-stats,
-            .instagram-preview {
+            .instagram-preview,
+            .catalog-grid {
                 grid-template-columns: 1fr;
             }
 
             .hero {
-                padding-top: 3.5rem;
+                padding: 2.75rem 0 2.5rem;
+            }
+
+            .section {
+                padding: 3rem 0;
+            }
+
+            .section-title {
+                font-size: clamp(2.2rem, 12vw, 3.2rem);
+                line-height: 1;
+            }
+
+            .section-copy,
+            .hero-copy p,
+            .catalog-card p,
+            .catalog-card li,
+            .instagram-box p,
+            .faq p,
+            .contact-card p,
+            .contact-list li {
+                font-size: 0.98rem;
+                line-height: 1.7;
+            }
+
+            .hero-copy h1 {
+                font-size: clamp(2.9rem, 15vw, 4rem);
+            }
+
+            .hero-actions {
+                width: 100%;
             }
 
             .button {
                 width: 100%;
             }
 
+            .button,
+            .catalog-link {
+                min-height: 52px;
+            }
+
+            .catalog-link {
+                width: 100%;
+            }
+
+            .hero-panel,
+            .instagram-box,
+            .faq,
+            .contact-card,
+            .card {
+                padding: 1.2rem;
+            }
+
+            .catalog-body {
+                padding: 1.1rem;
+            }
+
+            .logo-shell {
+                min-height: 200px;
+            }
+
             .brand span {
                 font-size: 0.95rem;
+            }
+
+            .brand img {
+                width: 56px;
+                height: 56px;
+            }
+
+            .nav {
+                width: 100%;
+                gap: 0.8rem;
+            }
+
+            .nav a {
+                width: 100%;
+                padding: 0.75rem 0.9rem;
+                border-radius: 14px;
+                background: rgba(255, 255, 255, 0.72);
+                border: 1px solid rgba(36, 22, 29, 0.06);
+            }
+
+            .eyebrow {
+                font-size: 0.78rem;
+                letter-spacing: 0.05em;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .container {
+                width: min(calc(100% - 1.1rem), var(--max-width));
+            }
+
+            .header-bar {
+                padding: 0.8rem 0;
+            }
+
+            .hero-panel {
+                padding: 1rem;
+            }
+
+            .mini-stats article {
+                padding: 0.9rem;
+            }
+
+            .catalog-media {
+                aspect-ratio: 3 / 4;
+            }
+
+            .preview-tile {
+                min-height: 110px;
             }
         }
 

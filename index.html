@@ -1,1036 +1,1303 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Yuli Creation | Crochet artesanal y pedidos personalizados</title>
-    <meta name="description" content="Yuli Creation crea prendas, accesorios y tejidos en crochet hechos a mano. Descubre vestidos, tops, conjuntos, amigurumis y pedidos personalizados con atención por WhatsApp e Instagram.">
-    <meta name="theme-color" content="#cc3a6b">
-    <meta property="og:title" content="Yuli Creation | Crochet artesanal y pedidos personalizados">
-    <meta property="og:description" content="Piezas tejidas a mano con estilo, detalle y producción personalizada. Haz tu pedido por WhatsApp o visita el Instagram del negocio.">
-    <meta property="og:type" content="website">
-    <meta property="og:image" content="img/yuli-logo.png">
-    <meta property="og:locale" content="es_DO">
-    <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:title" content="Yuli Creation">
-    <meta name="twitter:description" content="Crochet artesanal, diseños personalizados y atención directa por Instagram y WhatsApp.">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-    <style>
-        :root {
-            --rose: #cc3a6b;
-            --rose-dark: #9f244f;
-            --rose-soft: #fff0f4;
-            --peach: #ffd9cc;
-            --sand: #fffaf4;
-            --ink: #24161d;
-            --muted: #6d5560;
-            --line: rgba(36, 22, 29, 0.1);
-            --card: rgba(255, 255, 255, 0.82);
-            --shadow: 0 24px 60px rgba(137, 51, 88, 0.15);
-            --radius-lg: 32px;
-            --radius-md: 22px;
-            --radius-sm: 16px;
-            --max-width: 1180px;
-        }
-
-        * {
-            box-sizing: border-box;
-        }
-
-        html {
-            scroll-behavior: smooth;
-        }
-
-        body {
-            margin: 0;
-            font-family: "Manrope", sans-serif;
-            color: var(--ink);
-            overflow-x: hidden;
-            background:
-                radial-gradient(circle at top left, rgba(255, 217, 204, 0.68), transparent 30%),
-                radial-gradient(circle at top right, rgba(204, 58, 107, 0.12), transparent 24%),
-                linear-gradient(180deg, #fff7f7 0%, #fffdfb 36%, #fff7f2 100%);
-        }
-
-        img {
-            max-width: 100%;
-            display: block;
-        }
-
-        a {
-            color: inherit;
-            text-decoration: none;
-        }
-
-        .container {
-            width: min(calc(100% - 2rem), var(--max-width));
-            margin: 0 auto;
-        }
-
-        .eyebrow {
-            display: inline-flex;
-            align-items: center;
-            gap: 0.6rem;
-            padding: 0.45rem 0.9rem;
-            border-radius: 999px;
-            background: rgba(255, 255, 255, 0.7);
-            border: 1px solid rgba(204, 58, 107, 0.14);
-            color: var(--rose-dark);
-            font-size: 0.9rem;
-            font-weight: 800;
-            letter-spacing: 0.06em;
-            text-transform: uppercase;
-        }
-
-        .eyebrow::before {
-            content: "";
-            width: 0.55rem;
-            height: 0.55rem;
-            border-radius: 999px;
-            background: linear-gradient(135deg, var(--rose), #ff8e7e);
-            box-shadow: 0 0 0 0.25rem rgba(204, 58, 107, 0.12);
-        }
-
-        .section-title {
-            margin: 0.9rem 0 1rem;
-            font-family: "Cormorant Garamond", serif;
-            font-size: clamp(2.6rem, 5vw, 4.8rem);
-            line-height: 0.95;
-            letter-spacing: -0.04em;
-        }
-
-        .section-copy {
-            margin: 0;
-            max-width: 64ch;
-            color: var(--muted);
-            font-size: 1.05rem;
-            line-height: 1.8;
-        }
-
-        .site-header {
-            position: sticky;
-            top: 0;
-            z-index: 20;
-            backdrop-filter: blur(16px);
-            background: rgba(255, 250, 244, 0.76);
-            border-bottom: 1px solid rgba(36, 22, 29, 0.06);
-        }
-
-        .header-bar {
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-            gap: 1rem;
-            padding: 1rem 0;
-        }
-
-        .brand {
-            display: flex;
-            align-items: center;
-            gap: 0.9rem;
-            font-weight: 800;
-            letter-spacing: 0.02em;
-        }
-
-        .brand img {
-            width: 64px;
-            height: 64px;
-            object-fit: contain;
-            filter: drop-shadow(0 12px 24px rgba(204, 58, 107, 0.12));
-        }
-
-        .brand span {
-            font-size: 1.05rem;
-        }
-
-        .nav {
-            display: flex;
-            align-items: center;
-            gap: 1.2rem;
-            flex-wrap: wrap;
-            justify-content: flex-end;
-        }
-
-        .nav a {
-            color: var(--muted);
-            font-weight: 700;
-        }
-
-        .nav a:hover,
-        .nav a:focus-visible {
-            color: var(--rose);
-        }
-
-        .hero {
-            padding: 5.5rem 0 4rem;
-        }
-
-        .hero-grid {
-            display: grid;
-            grid-template-columns: 1.08fr 0.92fr;
-            gap: 2rem;
-            align-items: center;
-        }
-
-        .hero-copy,
-        .hero-panel,
-        .catalog-card,
-        .instagram-box,
-        .faq,
-        .contact-card {
-            min-width: 0;
-        }
-
-        .hero-copy h1 {
-            margin: 1rem 0 1.2rem;
-            font-family: "Cormorant Garamond", serif;
-            font-size: clamp(3.4rem, 8vw, 6.2rem);
-            line-height: 0.92;
-            letter-spacing: -0.05em;
-        }
-
-        .hero-copy p {
-            margin: 0;
-            max-width: 58ch;
-            color: var(--muted);
-            line-height: 1.9;
-            font-size: 1.08rem;
-        }
-
-        .hero-actions {
-            display: flex;
-            gap: 1rem;
-            flex-wrap: wrap;
-            margin-top: 2rem;
-        }
-
-        .button {
-            display: inline-flex;
-            align-items: center;
-            justify-content: center;
-            min-height: 56px;
-            padding: 0.95rem 1.4rem;
-            border-radius: 999px;
-            font-weight: 800;
-            transition: transform 0.2s ease, background-color 0.2s ease, color 0.2s ease;
-        }
-
-        .button:hover,
-        .button:focus-visible {
-            transform: translateY(-2px);
-        }
-
-        .button-primary {
-            background: linear-gradient(135deg, var(--rose), #ff8b72);
-            color: #fff;
-            box-shadow: 0 20px 36px rgba(204, 58, 107, 0.24);
-        }
-
-        .button-secondary {
-            border: 1px solid rgba(36, 22, 29, 0.12);
-            background: rgba(255, 255, 255, 0.74);
-            color: var(--ink);
-        }
-
-        .hero-panel {
-            position: relative;
-            border-radius: var(--radius-lg);
-            padding: 2rem;
-            background:
-                linear-gradient(160deg, rgba(255, 255, 255, 0.9), rgba(255, 255, 255, 0.72)),
-                linear-gradient(135deg, rgba(255, 217, 204, 0.46), rgba(204, 58, 107, 0.08));
-            box-shadow: var(--shadow);
-            overflow: hidden;
-        }
-
-        .hero-panel::after {
-            content: "";
-            position: absolute;
-            inset: auto -40px -40px auto;
-            width: 170px;
-            height: 170px;
-            border-radius: 999px;
-            background: radial-gradient(circle, rgba(204, 58, 107, 0.2), transparent 68%);
-        }
-
-        .logo-card {
-            display: grid;
-            gap: 1.4rem;
-            position: relative;
-            z-index: 1;
-        }
-
-        .logo-shell {
-            display: grid;
-            place-items: center;
-            min-height: 280px;
-            border-radius: calc(var(--radius-lg) - 8px);
-            background:
-                linear-gradient(135deg, rgba(255, 240, 244, 0.9), rgba(255, 255, 255, 0.94)),
-                repeating-linear-gradient(135deg, rgba(204, 58, 107, 0.03) 0 12px, rgba(255, 255, 255, 0.08) 12px 24px);
-            border: 1px solid rgba(204, 58, 107, 0.1);
-        }
-
-        .logo-shell img {
-            width: min(100%, 290px);
-            object-fit: contain;
-        }
-
-        .mini-stats {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 0.9rem;
-        }
-
-        .mini-stats article {
-            padding: 1rem;
-            border-radius: var(--radius-sm);
-            background: rgba(255, 255, 255, 0.72);
-            border: 1px solid rgba(36, 22, 29, 0.06);
-        }
-
-        .mini-stats strong {
-            display: block;
-            margin-bottom: 0.35rem;
-            font-size: 1.4rem;
-            color: var(--rose-dark);
-        }
-
-        .mini-stats span {
-            color: var(--muted);
-            font-size: 0.92rem;
-            line-height: 1.5;
-        }
-
-        .section {
-            padding: 5rem 0;
-        }
-
-        .split {
-            display: grid;
-            grid-template-columns: 0.88fr 1.12fr;
-            gap: 2rem;
-            align-items: start;
-        }
-
-        .cards {
-            display: grid;
-            grid-template-columns: repeat(3, minmax(0, 1fr));
-            gap: 1.25rem;
-        }
-
-        .card {
-            border-radius: var(--radius-md);
-            padding: 1.5rem;
-            background: var(--card);
-            border: 1px solid rgba(36, 22, 29, 0.08);
-            box-shadow: 0 18px 40px rgba(36, 22, 29, 0.06);
-        }
-
-        .card strong {
-            display: block;
-            margin-bottom: 0.55rem;
-            font-size: 1.2rem;
-        }
-
-        .card p {
-            margin: 0;
-            color: var(--muted);
-            line-height: 1.7;
-        }
-
-        .catalog-grid {
-            display: grid;
-            grid-template-columns: repeat(3, minmax(0, 1fr));
-            gap: 1.25rem;
-            margin-top: 2rem;
-        }
-
-        .catalog-card {
-            border-radius: var(--radius-lg);
-            overflow: hidden;
-            background: rgba(255, 255, 255, 0.86);
-            border: 1px solid rgba(36, 22, 29, 0.08);
-            box-shadow: var(--shadow);
-            display: flex;
-            flex-direction: column;
-            content-visibility: auto;
-        }
-
-        .catalog-media {
-            aspect-ratio: 4 / 5;
-            overflow: hidden;
-            background: #f7ecef;
-        }
-
-        .catalog-media img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-        }
-
-        .catalog-body {
-            display: grid;
-            gap: 1rem;
-            padding: 1.35rem;
-        }
-
-        .catalog-card strong {
-            display: block;
-            margin-bottom: 0.45rem;
-            font-size: 1.3rem;
-        }
-
-        .catalog-card p,
-        .catalog-card li {
-            margin: 0;
-            color: var(--muted);
-            line-height: 1.7;
-        }
-
-        .tag {
-            display: inline-flex;
-            align-items: center;
-            align-self: flex-start;
-            padding: 0.45rem 0.7rem;
-            border-radius: 999px;
-            background: rgba(255, 255, 255, 0.85);
-            color: var(--rose-dark);
-            border: 1px solid rgba(204, 58, 107, 0.12);
-            font-size: 0.86rem;
-            font-weight: 800;
-        }
-
-        .catalog-card ul {
-            margin: 0;
-            padding-left: 1.2rem;
-        }
-
-        .catalog-actions {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 0.75rem;
-        }
-
-        .catalog-link {
-            display: inline-flex;
-            align-items: center;
-            justify-content: center;
-            padding: 0.8rem 1rem;
-            border-radius: 999px;
-            background: rgba(36, 22, 29, 0.06);
-            color: var(--rose-dark);
-            font-weight: 800;
-        }
-
-        .catalog-link:hover,
-        .catalog-link:focus-visible {
-            background: rgba(204, 58, 107, 0.12);
-        }
-
-        .instagram-panel {
-            margin-top: 2rem;
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 1.25rem;
-        }
-
-        .instagram-box,
-        .faq,
-        .contact-card {
-            padding: 1.6rem;
-            border-radius: var(--radius-lg);
-            background: rgba(255, 255, 255, 0.82);
-            border: 1px solid rgba(36, 22, 29, 0.08);
-            box-shadow: var(--shadow);
-        }
-
-        .instagram-box h3,
-        .faq h3,
-        .contact-card h3 {
-            margin-top: 0;
-            margin-bottom: 0.9rem;
-            font-size: 1.35rem;
-        }
-
-        .instagram-box p,
-        .faq p,
-        .contact-card p,
-        .contact-list li {
-            color: var(--muted);
-            line-height: 1.8;
-        }
-
-        .instagram-preview {
-            display: grid;
-            grid-template-columns: repeat(2, 1fr);
-            gap: 0.9rem;
-            margin-top: 1.2rem;
-        }
-
-        .preview-tile {
-            min-height: 130px;
-            border-radius: var(--radius-sm);
-            padding: 1rem;
-            display: flex;
-            align-items: end;
-            color: #fff;
-            font-weight: 700;
-            background: var(--tile-gradient);
-        }
-
-        .faq-grid,
-        .contact-grid {
-            display: grid;
-            grid-template-columns: repeat(2, minmax(0, 1fr));
-            gap: 1.25rem;
-            margin-top: 2rem;
-        }
-
-        .contact-list {
-            margin: 1rem 0 0;
-            padding-left: 1.2rem;
-        }
-
-        .contact-list a {
-            overflow-wrap: anywhere;
-        }
-
-        .footer {
-            padding: 2rem 0 3rem;
-            color: var(--muted);
-        }
-
-        .footer-inner {
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-            gap: 1rem;
-            flex-wrap: wrap;
-            border-top: 1px solid rgba(36, 22, 29, 0.08);
-            padding-top: 1.5rem;
-        }
-
-        .footer-links {
-            display: flex;
-            gap: 1rem;
-            flex-wrap: wrap;
-        }
-
-        @media (max-width: 980px) {
-            .hero-grid,
-            .split,
-            .instagram-panel,
-            .faq-grid,
-            .contact-grid {
-                grid-template-columns: 1fr;
-            }
-
-            .cards {
-                grid-template-columns: 1fr;
-            }
-
-            .catalog-grid {
-                grid-template-columns: repeat(2, minmax(0, 1fr));
-            }
-
-            .hero {
-                padding: 4.5rem 0 3.5rem;
-            }
-
-            .hero-panel {
-                padding: 1.5rem;
-            }
-
-            .logo-shell {
-                min-height: 240px;
-            }
-
-            .section {
-                padding: 4rem 0;
-            }
-        }
-
-        @media (max-width: 720px) {
-            .site-header {
-                position: static;
-            }
-
-            .header-bar,
-            .nav,
-            .hero-actions,
-            .footer-inner,
-            .catalog-actions {
-                flex-direction: column;
-                align-items: flex-start;
-            }
-
-            .mini-stats,
-            .instagram-preview,
-            .catalog-grid {
-                grid-template-columns: 1fr;
-            }
-
-            .hero {
-                padding: 2.75rem 0 2.5rem;
-            }
-
-            .section {
-                padding: 3rem 0;
-            }
-
-            .section-title {
-                font-size: clamp(2.2rem, 12vw, 3.2rem);
-                line-height: 1;
-            }
-
-            .section-copy,
-            .hero-copy p,
-            .catalog-card p,
-            .catalog-card li,
-            .instagram-box p,
-            .faq p,
-            .contact-card p,
-            .contact-list li {
-                font-size: 0.98rem;
-                line-height: 1.7;
-            }
-
-            .hero-copy h1 {
-                font-size: clamp(2.9rem, 15vw, 4rem);
-            }
-
-            .hero-actions {
-                width: 100%;
-            }
-
-            .button {
-                width: 100%;
-            }
-
-            .button,
-            .catalog-link {
-                min-height: 52px;
-            }
-
-            .catalog-link {
-                width: 100%;
-            }
-
-            .hero-panel,
-            .instagram-box,
-            .faq,
-            .contact-card,
-            .card {
-                padding: 1.2rem;
-            }
-
-            .catalog-body {
-                padding: 1.1rem;
-            }
-
-            .logo-shell {
-                min-height: 200px;
-            }
-
-            .brand span {
-                font-size: 0.95rem;
-            }
-
-            .brand img {
-                width: 56px;
-                height: 56px;
-            }
-
-            .nav {
-                width: 100%;
-                gap: 0.8rem;
-            }
-
-            .nav a {
-                width: 100%;
-                padding: 0.75rem 0.9rem;
-                border-radius: 14px;
-                background: rgba(255, 255, 255, 0.72);
-                border: 1px solid rgba(36, 22, 29, 0.06);
-            }
-
-            .eyebrow {
-                font-size: 0.78rem;
-                letter-spacing: 0.05em;
-            }
-        }
-
-        @media (max-width: 480px) {
-            .container {
-                width: min(calc(100% - 1.1rem), var(--max-width));
-            }
-
-            .header-bar {
-                padding: 0.8rem 0;
-            }
-
-            .hero-panel {
-                padding: 1rem;
-            }
-
-            .mini-stats article {
-                padding: 0.9rem;
-            }
-
-            .catalog-media {
-                aspect-ratio: 3 / 4;
-            }
-
-            .preview-tile {
-                min-height: 110px;
-            }
-        }
-
-        @media (prefers-reduced-motion: reduce) {
-            html {
-                scroll-behavior: auto;
-            }
-
-            *,
-            *::before,
-            *::after {
-                animation-duration: 0.01ms !important;
-                animation-iteration-count: 1 !important;
-                transition-duration: 0.01ms !important;
-            }
-        }
-    </style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Yuli Creation | Crochet artesanal y pedidos personalizados</title>
+  <meta name="description" content="Yuli Creation crea prendas, accesorios y tejidos en crochet hechos a mano. Vestidos, tops, conjuntos y pedidos personalizados con atención por WhatsApp e Instagram.">
+  <meta name="theme-color" content="#b8315a">
+
+  <!-- Open Graph -->
+  <meta property="og:title" content="Yuli Creation | Crochet artesanal y pedidos personalizados">
+  <meta property="og:description" content="Piezas tejidas a mano con estilo, detalle y producción personalizada. Haz tu pedido por WhatsApp o visita el Instagram del negocio.">
+  <meta property="og:type" content="website">
+  <meta property="og:image" content="img/yuli-logo.png">
+  <meta property="og:locale" content="es_DO">
+
+  <!-- Twitter -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Yuli Creation">
+  <meta name="twitter:description" content="Crochet artesanal, diseños personalizados y atención directa por Instagram y WhatsApp.">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400;1,600&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+
+  <style>
+    /* ── RESET & BASE ─────────────────────────────────────── */
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --crimson:    #b8315a;
+      --crimson-dk: #8c1f3f;
+      --crimson-lt: #f5d6df;
+      --blush:      #fdf0f3;
+      --cream:      #fdfaf6;
+      --warm:       #f7f0e8;
+      --ink:        #1a0f14;
+      --muted:      #735263;
+      --border:     rgba(26, 15, 20, 0.09);
+      --glass:      rgba(253, 250, 246, 0.88);
+      --shadow-sm:  0 2px 16px rgba(184, 49, 90, 0.08);
+      --shadow-md:  0 8px 40px rgba(184, 49, 90, 0.12);
+      --shadow-lg:  0 20px 60px rgba(184, 49, 90, 0.16);
+      --r-xl: 28px;
+      --r-lg: 20px;
+      --r-md: 14px;
+      --r-sm: 10px;
+      --max: 1200px;
+      --font-serif: "Playfair Display", Georgia, serif;
+      --font-sans:  "DM Sans", system-ui, sans-serif;
+    }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      font-family: var(--font-sans);
+      color: var(--ink);
+      background: var(--cream);
+      overflow-x: hidden;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    body::before {
+      content: "";
+      position: fixed;
+      inset: 0;
+      pointer-events: none;
+      z-index: 0;
+      background:
+        radial-gradient(ellipse 70% 50% at 0% 0%, rgba(245, 214, 223, 0.55) 0%, transparent 60%),
+        radial-gradient(ellipse 50% 40% at 100% 0%, rgba(184, 49, 90, 0.07) 0%, transparent 55%),
+        radial-gradient(ellipse 60% 60% at 50% 110%, rgba(247, 240, 232, 0.8) 0%, transparent 70%);
+    }
+
+    img { max-width: 100%; display: block; }
+    a { color: inherit; text-decoration: none; }
+
+    .wrap {
+      width: min(calc(100% - 2.5rem), var(--max));
+      margin-inline: auto;
+      position: relative;
+      z-index: 1;
+    }
+
+    /* ── UTILITY ──────────────────────────────────────────── */
+    .badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      padding: 0.4rem 0.85rem;
+      border-radius: 999px;
+      background: rgba(184, 49, 90, 0.07);
+      border: 1px solid rgba(184, 49, 90, 0.18);
+      color: var(--crimson-dk);
+      font-size: 0.75rem;
+      font-weight: 600;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+    }
+    .badge::before {
+      content: "";
+      width: 6px;
+      height: 6px;
+      border-radius: 50%;
+      background: var(--crimson);
+      flex-shrink: 0;
+    }
+
+    .sec-title {
+      font-family: var(--font-serif);
+      font-size: clamp(2.4rem, 5vw, 4rem);
+      font-weight: 700;
+      line-height: 1.05;
+      letter-spacing: -0.02em;
+      margin-top: 0.7rem;
+    }
+
+    .sec-copy {
+      color: var(--muted);
+      font-size: 1.05rem;
+      line-height: 1.85;
+      max-width: 55ch;
+      font-weight: 400;
+    }
+
+    /* ── BUTTONS ──────────────────────────────────────────── */
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0.5rem;
+      min-height: 52px;
+      padding: 0.85rem 1.6rem;
+      border-radius: 999px;
+      font-family: var(--font-sans);
+      font-weight: 600;
+      font-size: 0.95rem;
+      transition: transform 0.18s ease, box-shadow 0.18s ease, background 0.18s ease;
+      cursor: pointer;
+    }
+    .btn:hover { transform: translateY(-2px); }
+    .btn-main {
+      background: linear-gradient(135deg, var(--crimson) 0%, #d4466f 100%);
+      color: #fff;
+      box-shadow: 0 12px 28px rgba(184, 49, 90, 0.28);
+    }
+    .btn-main:hover { box-shadow: 0 18px 36px rgba(184, 49, 90, 0.34); }
+    .btn-ghost {
+      background: var(--glass);
+      color: var(--ink);
+      border: 1px solid var(--border);
+    }
+    .btn-ghost:hover { background: #fff; }
+    .btn-rose {
+      background: var(--crimson-lt);
+      color: var(--crimson-dk);
+      border: 1px solid rgba(184, 49, 90, 0.15);
+    }
+    .btn-rose:hover { background: rgba(245, 214, 223, 0.75); }
+
+    /* ── HEADER ───────────────────────────────────────────── */
+    .site-header {
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      backdrop-filter: blur(20px) saturate(1.4);
+      -webkit-backdrop-filter: blur(20px) saturate(1.4);
+      background: rgba(253, 250, 246, 0.82);
+      border-bottom: 1px solid var(--border);
+      transition: background 0.3s ease;
+    }
+
+    .header-inner {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 1.5rem;
+      padding: 0.9rem 0;
+    }
+
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+      flex-shrink: 0;
+    }
+    .brand-logo {
+      width: 52px;
+      height: 52px;
+      object-fit: contain;
+      border-radius: 50%;
+      background: var(--blush);
+      border: 1.5px solid rgba(184, 49, 90, 0.12);
+      padding: 4px;
+    }
+    .brand-name {
+      font-family: var(--font-serif);
+      font-size: 1.2rem;
+      font-weight: 600;
+      letter-spacing: -0.01em;
+    }
+
+    .nav {
+      display: flex;
+      align-items: center;
+      gap: 0.25rem;
+    }
+    .nav a {
+      padding: 0.5rem 0.9rem;
+      border-radius: 999px;
+      font-size: 0.9rem;
+      font-weight: 500;
+      color: var(--muted);
+      transition: color 0.15s, background 0.15s;
+    }
+    .nav a:hover { color: var(--crimson); background: rgba(184, 49, 90, 0.06); }
+
+    .header-cta { flex-shrink: 0; }
+
+    /* ── HERO ─────────────────────────────────────────────── */
+    .hero {
+      padding: 5rem 0 4.5rem;
+    }
+
+    .hero-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 3rem;
+      align-items: center;
+    }
+
+    .hero-left { min-width: 0; }
+
+    .hero-heading {
+      font-family: var(--font-serif);
+      font-size: clamp(3rem, 6vw, 5rem);
+      font-weight: 700;
+      line-height: 1.0;
+      letter-spacing: -0.03em;
+      margin-top: 0.9rem;
+      margin-bottom: 1.3rem;
+    }
+    .hero-heading em {
+      font-style: italic;
+      color: var(--crimson);
+    }
+
+    .hero-sub {
+      color: var(--muted);
+      font-size: 1.1rem;
+      line-height: 1.85;
+      max-width: 50ch;
+    }
+
+    .hero-actions {
+      display: flex;
+      gap: 0.9rem;
+      flex-wrap: wrap;
+      margin-top: 2rem;
+    }
+
+    /* ── HERO VISUAL ──────────────────────────────────────── */
+    .hero-right {
+      position: relative;
+    }
+
+    .hero-mosaic {
+      display: grid;
+      grid-template-columns: 1.3fr 1fr;
+      grid-template-rows: auto auto;
+      gap: 0.9rem;
+    }
+
+    .hero-mosaic .tile {
+      border-radius: var(--r-xl);
+      overflow: hidden;
+      position: relative;
+    }
+    .hero-mosaic .tile-tall {
+      grid-row: span 2;
+    }
+    .hero-mosaic .tile img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform 0.5s ease;
+    }
+    .hero-mosaic .tile:hover img { transform: scale(1.04); }
+
+    .hero-mosaic .tile-tall { min-height: 440px; }
+    .hero-mosaic .tile-short { height: 200px; }
+
+    /* Floating badge over mosaic */
+    .float-badge {
+      position: absolute;
+      bottom: 1.1rem;
+      left: 1.1rem;
+      background: rgba(253, 250, 246, 0.94);
+      backdrop-filter: blur(10px);
+      border: 1px solid var(--border);
+      border-radius: var(--r-md);
+      padding: 0.65rem 0.85rem;
+      display: flex;
+      flex-direction: column;
+      gap: 0.15rem;
+      box-shadow: var(--shadow-sm);
+      z-index: 5;
+    }
+    .float-badge strong {
+      font-family: var(--font-serif);
+      font-size: 1.15rem;
+      color: var(--crimson-dk);
+      line-height: 1;
+    }
+    .float-badge span {
+      font-size: 0.75rem;
+      color: var(--muted);
+    }
+
+    /* ── STATS BAR ────────────────────────────────────────── */
+    .stats-bar {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 0;
+      border: 1px solid var(--border);
+      border-radius: var(--r-xl);
+      background: var(--glass);
+      backdrop-filter: blur(12px);
+      overflow: hidden;
+      margin-top: 3rem;
+    }
+    .stat-item {
+      padding: 1.4rem 1.5rem;
+      border-right: 1px solid var(--border);
+    }
+    .stat-item:last-child { border-right: none; }
+    .stat-num {
+      font-family: var(--font-serif);
+      font-size: 2.2rem;
+      font-weight: 700;
+      color: var(--crimson);
+      line-height: 1;
+      margin-bottom: 0.3rem;
+    }
+    .stat-label {
+      font-size: 0.85rem;
+      color: var(--muted);
+      line-height: 1.4;
+    }
+
+    /* ── SECTION BASICS ───────────────────────────────────── */
+    .sec { padding: 5.5rem 0; }
+
+    .sec-header {
+      display: grid;
+      gap: 1rem;
+      margin-bottom: 2.8rem;
+    }
+    .sec-header.two-col {
+      grid-template-columns: 1fr auto;
+      align-items: end;
+    }
+
+    /* ── ABOUT / VALUE PROPS ──────────────────────────────── */
+    .about-grid {
+      display: grid;
+      grid-template-columns: 1fr 1.1fr;
+      gap: 3rem;
+      align-items: center;
+    }
+
+    .about-image-wrap {
+      position: relative;
+    }
+    .about-image-main {
+      border-radius: var(--r-xl);
+      overflow: hidden;
+      aspect-ratio: 3/4;
+      box-shadow: var(--shadow-lg);
+    }
+    .about-image-main img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+    .about-image-accent {
+      position: absolute;
+      width: 48%;
+      bottom: -1.2rem;
+      right: -1.2rem;
+      border-radius: var(--r-lg);
+      overflow: hidden;
+      aspect-ratio: 1;
+      box-shadow: var(--shadow-md);
+      border: 4px solid var(--cream);
+    }
+    .about-image-accent img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    .value-cards {
+      display: grid;
+      gap: 1rem;
+      margin-top: 2rem;
+    }
+    .value-card {
+      display: flex;
+      gap: 1rem;
+      align-items: flex-start;
+      padding: 1.1rem 1.2rem;
+      border-radius: var(--r-lg);
+      background: var(--glass);
+      border: 1px solid var(--border);
+      transition: box-shadow 0.2s, transform 0.2s;
+    }
+    .value-card:hover {
+      box-shadow: var(--shadow-sm);
+      transform: translateX(3px);
+    }
+    .value-icon {
+      font-size: 1.4rem;
+      flex-shrink: 0;
+      width: 40px;
+      height: 40px;
+      display: grid;
+      place-items: center;
+      background: var(--crimson-lt);
+      border-radius: var(--r-sm);
+    }
+    .value-card h3 {
+      font-family: var(--font-serif);
+      font-size: 1.05rem;
+      font-weight: 600;
+      margin-bottom: 0.25rem;
+    }
+    .value-card p {
+      font-size: 0.9rem;
+      color: var(--muted);
+      line-height: 1.6;
+    }
+
+    /* ── CATALOG ──────────────────────────────────────────── */
+    .catalog-sec { background: var(--warm); }
+    .catalog-sec .wrap { padding: 5.5rem 0; }
+
+    .catalog-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1.2rem;
+    }
+
+    .cat-card {
+      background: #fff;
+      border-radius: var(--r-xl);
+      overflow: hidden;
+      border: 1px solid var(--border);
+      box-shadow: var(--shadow-sm);
+      display: flex;
+      flex-direction: column;
+      transition: transform 0.25s ease, box-shadow 0.25s ease;
+    }
+    .cat-card:hover {
+      transform: translateY(-5px);
+      box-shadow: var(--shadow-md);
+    }
+
+    .cat-media {
+      aspect-ratio: 4/5;
+      overflow: hidden;
+      background: var(--blush);
+      position: relative;
+    }
+    .cat-media img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform 0.5s ease;
+    }
+    .cat-card:hover .cat-media img { transform: scale(1.06); }
+
+    .cat-tag {
+      position: absolute;
+      top: 0.9rem;
+      left: 0.9rem;
+      background: rgba(253, 250, 246, 0.92);
+      backdrop-filter: blur(8px);
+      color: var(--crimson-dk);
+      font-size: 0.72rem;
+      font-weight: 700;
+      letter-spacing: 0.07em;
+      text-transform: uppercase;
+      padding: 0.3rem 0.65rem;
+      border-radius: 999px;
+      border: 1px solid rgba(184, 49, 90, 0.15);
+    }
+
+    .cat-body {
+      padding: 1.2rem;
+      display: flex;
+      flex-direction: column;
+      gap: 0.7rem;
+      flex: 1;
+    }
+    .cat-body h3 {
+      font-family: var(--font-serif);
+      font-size: 1.1rem;
+      font-weight: 600;
+      line-height: 1.25;
+    }
+    .cat-body p {
+      font-size: 0.88rem;
+      color: var(--muted);
+      line-height: 1.65;
+    }
+    .cat-body ul {
+      padding-left: 1.1rem;
+      font-size: 0.85rem;
+      color: var(--muted);
+      line-height: 1.7;
+    }
+    .cat-actions {
+      display: flex;
+      gap: 0.5rem;
+      margin-top: auto;
+      padding-top: 0.3rem;
+    }
+    .cat-btn {
+      flex: 1;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      padding: 0.65rem 0.5rem;
+      border-radius: 999px;
+      font-size: 0.82rem;
+      font-weight: 600;
+      text-align: center;
+      transition: background 0.18s, transform 0.18s;
+    }
+    .cat-btn:hover { transform: translateY(-1px); }
+    .cat-btn-ig {
+      background: var(--crimson-lt);
+      color: var(--crimson-dk);
+      border: 1px solid rgba(184, 49, 90, 0.14);
+    }
+    .cat-btn-ig:hover { background: rgba(245, 214, 223, 0.75); }
+    .cat-btn-wa {
+      background: #25d366;
+      color: #fff;
+    }
+    .cat-btn-wa:hover { background: #1fb959; }
+
+    /* ── INSTAGRAM ────────────────────────────────────────── */
+    .ig-sec {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1.5rem;
+      align-items: start;
+    }
+
+    .ig-card {
+      background: var(--glass);
+      border: 1px solid var(--border);
+      border-radius: var(--r-xl);
+      padding: 1.8rem;
+      box-shadow: var(--shadow-sm);
+    }
+    .ig-card h3 {
+      font-family: var(--font-serif);
+      font-size: 1.4rem;
+      font-weight: 600;
+      margin-bottom: 0.6rem;
+    }
+    .ig-card p { color: var(--muted); font-size: 0.95rem; line-height: 1.75; }
+
+    .ig-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 0.6rem;
+      margin-top: 1.3rem;
+    }
+    .ig-tile {
+      aspect-ratio: 1;
+      border-radius: var(--r-md);
+      overflow: hidden;
+      position: relative;
+    }
+    .ig-tile img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform 0.4s ease;
+    }
+    .ig-tile:hover img { transform: scale(1.08); }
+    .ig-tile-overlay {
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(to top, rgba(184,49,90,0.5), transparent 50%);
+      opacity: 0;
+      transition: opacity 0.3s;
+      display: flex;
+      align-items: flex-end;
+      padding: 0.7rem;
+      color: #fff;
+      font-size: 0.8rem;
+      font-weight: 600;
+    }
+    .ig-tile:hover .ig-tile-overlay { opacity: 1; }
+
+    .ig-cta {
+      display: flex;
+      flex-direction: column;
+      gap: 0.75rem;
+      margin-top: 1.4rem;
+    }
+
+    /* ── FAQ + CONTACT ────────────────────────────────────── */
+    .faq-contact-grid {
+      display: grid;
+      grid-template-columns: 1.2fr 1fr;
+      gap: 1.5rem;
+      align-items: start;
+    }
+
+    .faq-list { display: grid; gap: 0.85rem; }
+
+    .faq-item {
+      background: var(--glass);
+      border: 1px solid var(--border);
+      border-radius: var(--r-lg);
+      padding: 1.2rem 1.3rem;
+      box-shadow: var(--shadow-sm);
+    }
+    .faq-item h3 {
+      font-family: var(--font-serif);
+      font-size: 1.05rem;
+      font-weight: 600;
+      margin-bottom: 0.45rem;
+      display: flex;
+      align-items: flex-start;
+      gap: 0.5rem;
+    }
+    .faq-item h3::before {
+      content: "?";
+      font-family: var(--font-serif);
+      font-style: italic;
+      color: var(--crimson);
+      font-size: 1.1rem;
+      flex-shrink: 0;
+      margin-top: -0.05rem;
+    }
+    .faq-item p { color: var(--muted); font-size: 0.9rem; line-height: 1.7; }
+
+    .contact-panel {
+      background: linear-gradient(145deg, var(--crimson) 0%, #c9446e 100%);
+      border-radius: var(--r-xl);
+      padding: 2rem;
+      color: #fff;
+      box-shadow: 0 20px 50px rgba(184, 49, 90, 0.3);
+      position: sticky;
+      top: 90px;
+    }
+    .contact-panel h3 {
+      font-family: var(--font-serif);
+      font-size: 1.7rem;
+      font-weight: 700;
+      margin-bottom: 0.5rem;
+      line-height: 1.15;
+    }
+    .contact-panel p {
+      font-size: 0.9rem;
+      opacity: 0.85;
+      line-height: 1.7;
+      margin-bottom: 1.5rem;
+    }
+    .contact-links {
+      display: flex;
+      flex-direction: column;
+      gap: 0.75rem;
+    }
+    .contact-link {
+      display: flex;
+      align-items: center;
+      gap: 0.8rem;
+      padding: 0.85rem 1rem;
+      border-radius: var(--r-md);
+      background: rgba(255,255,255,0.13);
+      border: 1px solid rgba(255,255,255,0.2);
+      color: #fff;
+      font-weight: 600;
+      font-size: 0.9rem;
+      transition: background 0.18s;
+      word-break: break-all;
+    }
+    .contact-link:hover { background: rgba(255,255,255,0.22); }
+    .contact-link-icon {
+      width: 34px;
+      height: 34px;
+      border-radius: var(--r-sm);
+      background: rgba(255,255,255,0.18);
+      display: grid;
+      place-items: center;
+      font-size: 1rem;
+      flex-shrink: 0;
+    }
+    .contact-divider {
+      width: 100%;
+      height: 1px;
+      background: rgba(255,255,255,0.2);
+      margin: 0.75rem 0;
+    }
+    .contact-cta {
+      display: flex;
+      flex-direction: column;
+      gap: 0.6rem;
+      margin-top: 1.2rem;
+    }
+    .contact-btn {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0.5rem;
+      padding: 0.85rem 1.2rem;
+      border-radius: 999px;
+      font-weight: 700;
+      font-size: 0.92rem;
+      transition: transform 0.18s, background 0.18s;
+      text-align: center;
+    }
+    .contact-btn:hover { transform: translateY(-2px); }
+    .contact-btn-wa {
+      background: #25d366;
+      color: #fff;
+    }
+    .contact-btn-wa:hover { background: #1fb959; }
+    .contact-btn-ig {
+      background: rgba(255,255,255,0.15);
+      color: #fff;
+      border: 1px solid rgba(255,255,255,0.3);
+    }
+    .contact-btn-ig:hover { background: rgba(255,255,255,0.25); }
+
+    /* ── FOOTER ───────────────────────────────────────────── */
+    .footer {
+      border-top: 1px solid var(--border);
+      padding: 2.2rem 0 3rem;
+    }
+    .footer-inner {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 1.5rem;
+      flex-wrap: wrap;
+    }
+    .footer-brand {
+      display: flex;
+      align-items: center;
+      gap: 0.6rem;
+    }
+    .footer-brand img {
+      width: 36px;
+      height: 36px;
+      object-fit: contain;
+      border-radius: 50%;
+      border: 1.5px solid var(--border);
+      background: var(--blush);
+      padding: 3px;
+    }
+    .footer-brand span {
+      font-family: var(--font-serif);
+      font-weight: 600;
+      font-size: 1rem;
+    }
+    .footer-copy { font-size: 0.85rem; color: var(--muted); }
+    .footer-links {
+      display: flex;
+      gap: 1.5rem;
+      flex-wrap: wrap;
+    }
+    .footer-links a {
+      font-size: 0.85rem;
+      color: var(--muted);
+      font-weight: 500;
+      transition: color 0.15s;
+    }
+    .footer-links a:hover { color: var(--crimson); }
+
+    /* ── SCROLL REVEAL ANIMATION ──────────────────────────── */
+    .reveal {
+      opacity: 0;
+      transform: translateY(22px);
+      transition: opacity 0.6s ease, transform 0.6s ease;
+    }
+    .reveal.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    /* ── RESPONSIVE ───────────────────────────────────────── */
+    @media (max-width: 1024px) {
+      .hero-grid { grid-template-columns: 1fr; }
+      .hero-right { order: -1; }
+      .hero-mosaic .tile-tall { min-height: 300px; }
+      .hero-mosaic .tile-short { height: 140px; }
+      .about-grid { grid-template-columns: 1fr; }
+      .about-image-wrap { max-width: 420px; margin-inline: auto; }
+      .catalog-grid { grid-template-columns: repeat(2, 1fr); }
+      .faq-contact-grid { grid-template-columns: 1fr; }
+      .contact-panel { position: static; }
+    }
+
+    @media (max-width: 720px) {
+      .site-header { position: static; }
+      .header-inner { flex-wrap: wrap; }
+      .nav { order: 3; width: 100%; flex-wrap: wrap; }
+      .nav a { flex: 1; min-width: 100px; text-align: center; background: rgba(255,255,255,0.7); border: 1px solid var(--border); border-radius: var(--r-sm); }
+      .header-cta { order: 2; }
+      .hero { padding: 3rem 0 2.5rem; }
+      .sec { padding: 4rem 0; }
+      .hero-mosaic { grid-template-columns: 1fr; }
+      .hero-mosaic .tile-tall { min-height: 260px; }
+      .hero-mosaic .tile-short { display: none; }
+      .catalog-grid { grid-template-columns: 1fr; }
+      .ig-sec { grid-template-columns: 1fr; }
+      .stats-bar { grid-template-columns: 1fr; }
+      .stat-item { border-right: none; border-bottom: 1px solid var(--border); }
+      .stat-item:last-child { border-bottom: none; }
+      .hero-actions { flex-direction: column; }
+      .btn { width: 100%; }
+      .sec-header.two-col { grid-template-columns: 1fr; }
+    }
+
+    @media (max-width: 480px) {
+      .wrap { width: calc(100% - 1.5rem); }
+      .cat-actions { flex-direction: column; }
+      .cat-btn { width: 100%; }
+      .hero-heading { font-size: 2.6rem; }
+      .ig-grid { grid-template-columns: 1fr; }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      html { scroll-behavior: auto; }
+      *, *::before, *::after {
+        animation-duration: 0.01ms !important;
+        transition-duration: 0.01ms !important;
+      }
+      .reveal { opacity: 1; transform: none; }
+    }
+  </style>
 </head>
+
 <body>
-    <header class="site-header">
-        <div class="container header-bar">
-            <a class="brand" href="#inicio" aria-label="Ir al inicio de Yuli Creation">
-                <img src="img/yuli-logo.png" alt="Logo de Yuli Creation" width="64" height="64">
-                <span>Yuli Creation</span>
-            </a>
-            <nav class="nav" aria-label="Principal">
-                <a href="#colecciones">Catálogo</a>
-                <a href="#propuesta">Comprar</a>
-                <a href="#instagram">Instagram</a>
-                <a href="#pedidos">Pedidos</a>
-            </nav>
+
+  <!-- ── HEADER ─────────────────────────────────────────── -->
+  <header class="site-header">
+    <div class="wrap header-inner">
+      <a class="brand" href="#inicio" aria-label="Inicio — Yuli Creation">
+        <img class="brand-logo" src="img/yuli-logo.png" alt="Logo de Yuli Creation" width="52" height="52">
+        <span class="brand-name">Yuli Creation</span>
+      </a>
+      <nav class="nav" aria-label="Navegación principal">
+        <a href="#catalogo">Catálogo</a>
+        <a href="#nosotros">Nosotros</a>
+        <a href="#instagram">Instagram</a>
+        <a href="#pedidos">Pedidos</a>
+      </nav>
+      <div class="header-cta">
+        <a class="btn btn-main" href="https://wa.me/18295420597?text=Hola%2C%20quiero%20cotizar%20una%20pieza%20de%20Yuli%20Creation." target="_blank" rel="noopener noreferrer">
+          📲 Pedir ahora
+        </a>
+      </div>
+    </div>
+  </header>
+
+  <main id="inicio">
+
+    <!-- ── HERO ───────────────────────────────────────────── -->
+    <section class="hero">
+      <div class="wrap hero-grid">
+        <div class="hero-left reveal">
+          <span class="badge">Crochet artesanal — hecho a mano</span>
+          <h1 class="hero-heading">
+            Piezas <em>tejidas</em><br>
+            con alma y detalle.
+          </h1>
+          <p class="hero-sub">
+            Diseños únicos en crochet — vestidos, conjuntos y accesorios elaborados a mano bajo pedido. Cada pieza refleja dedicación artesanal y estilo propio.
+          </p>
+          <div class="hero-actions">
+            <a class="btn btn-main" href="#catalogo">Ver catálogo →</a>
+            <a class="btn btn-ghost" href="https://wa.me/18295420597" target="_blank" rel="noopener noreferrer">Pedir por WhatsApp</a>
+          </div>
         </div>
-    </header>
 
-    <main id="main-content">
-        <section class="hero" id="inicio">
-            <div class="container hero-grid">
-                <div class="hero-copy">
-                    <span class="eyebrow">Crochet artesanal</span>
-                    <h1>Piezas tejidas a mano para elegir y encargar.</h1>
-                    <p>
-                        Diseños en crochet con presencia, detalle y acabado artesanal.
-                    </p>
-                    <div class="hero-actions">
-                        <a class="button button-primary" href="#colecciones">Ver catálogo</a>
-                        <a class="button button-secondary" href="https://wa.me/18295420597" target="_blank" rel="noopener noreferrer">Pedir por WhatsApp</a>
-                    </div>
-                </div>
-
-                <aside class="hero-panel" aria-label="Resumen del negocio">
-                    <div class="logo-card">
-                        <div class="logo-shell">
-                            <img src="img/yuli-logo.png" alt="Identidad visual de Yuli Creation" width="290" height="290" loading="eager">
-                        </div>
-                        <div class="mini-stats">
-                            <article>
-                                <strong>100%</strong>
-                                <span>Hecho a mano.</span>
-                            </article>
-                            <article>
-                                <strong>2-4</strong>
-                                <span>Semanas de producción.</span>
-                            </article>
-                            <article>
-                                <strong>DM + WA</strong>
-                                <span>Pedidos por Instagram o WhatsApp.</span>
-                            </article>
-                        </div>
-                    </div>
-                </aside>
+        <div class="hero-right reveal" style="transition-delay:0.15s">
+          <div class="hero-mosaic">
+            <div class="tile tile-tall">
+              <img src="img/img-01.jpg" alt="Vestido largo amarillo en crochet de Yuli Creation" loading="eager">
+              <div class="float-badge">
+                <strong>100% Hecho a mano</strong>
+                <span>Cada pieza es única</span>
+              </div>
             </div>
-        </section>
-
-        <section class="section" id="propuesta">
-            <div class="container split">
-                <div>
-                    <span class="eyebrow">Yuli Creation</span>
-                    <h2 class="section-title">Diseños hechos a mano por encargo.</h2>
-                    <p class="section-copy">
-                        Elige tu diseño o solicita una versión personalizada en la combinación que prefieras.
-                    </p>
-                </div>
-                <div class="cards">
-                    <article class="card">
-                        <strong>Prendas y conjuntos</strong>
-                        <p>Vestidos, tops y conjuntos tejidos a mano.</p>
-                    </article>
-                    <article class="card">
-                        <strong>Pedidos personalizados</strong>
-                        <p>Solicita ajustes de color, talla y estilo.</p>
-                    </article>
-                    <article class="card">
-                        <strong>Atención directa</strong>
-                        <p>Pedidos por WhatsApp, Instagram o email.</p>
-                    </article>
-                </div>
+            <div class="tile tile-short">
+              <img src="img/img-05.jpg" alt="Conjunto blanco en crochet de Yuli Creation" loading="lazy">
             </div>
-        </section>
-
-        <section class="section" id="colecciones">
-            <div class="container">
-                <span class="eyebrow">Catálogo</span>
-                <h2 class="section-title">Diseños reales de Yuli Creation.</h2>
-                <p class="section-copy">
-                    Una selección de piezas disponibles para pedido.
-                </p>
-
-                <div class="catalog-grid">
-                    <article class="catalog-card">
-                        <div class="catalog-media">
-                            <img src="img/WhatsApp Image 2026-01-06 at 12.21.40 PM.jpeg" alt="Vestido largo amarillo tejido en crochet de Yuli Creation" loading="lazy">
-                        </div>
-                        <div class="catalog-body">
-                            <div>
-                                <span class="tag">Vestido</span>
-                                <strong>Vestido largo amarillo</strong>
-                                <p>Vestido largo en crochet con manga larga y abertura frontal.</p>
-                            </div>
-                            <ul>
-                                <li>Pedido por encargo.</li>
-                                <li>Tallas y colores a consultar.</li>
-                            </ul>
-                            <div class="catalog-actions">
-                                <a class="catalog-link" href="https://www.instagram.com/p/DPmKnKjgHnf/?img_index=1" target="_blank" rel="noopener noreferrer">Ver publicación</a>
-                                <a class="catalog-link" href="https://wa.me/18295420597?text=Hola%2C%20quiero%20cotizar%20el%20vestido%20largo%20amarillo%20de%20Yuli%20Creation." target="_blank" rel="noopener noreferrer">Pedir este diseño</a>
-                            </div>
-                        </div>
-                    </article>
-
-                    <article class="catalog-card">
-                        <div class="catalog-media">
-                            <img src="img/WhatsApp Image 2026-01-06 at 12.21.40 PM (1).jpeg" alt="Vista alternativa del vestido amarillo tejido en crochet" loading="lazy">
-                        </div>
-                        <div class="catalog-body">
-                            <div>
-                                <span class="tag">Vestido</span>
-                                <strong>Vestido amarillo vista editorial</strong>
-                                <p>Una vista adicional para apreciar textura y silueta.</p>
-                            </div>
-                            <ul>
-                                <li>Pedido por encargo.</li>
-                                <li>Tallas y colores a consultar.</li>
-                            </ul>
-                            <div class="catalog-actions">
-                                <a class="catalog-link" href="https://www.instagram.com/p/DOHuN0AgAiy/?img_index=1" target="_blank" rel="noopener noreferrer">Ver publicación</a>
-                                <a class="catalog-link" href="https://wa.me/18295420597?text=Hola%2C%20quiero%20m%C3%A1s%20informaci%C3%B3n%20sobre%20el%20vestido%20amarillo%20de%20Yuli%20Creation." target="_blank" rel="noopener noreferrer">Consultar diseño</a>
-                            </div>
-                        </div>
-                    </article>
-
-                    <article class="catalog-card">
-                        <div class="catalog-media">
-                            <img src="img/WhatsApp Image 2026-01-06 at 12.21.41 PM (2).jpeg" alt="Vestido amarillo en crochet apoyado en árbol" loading="lazy">
-                        </div>
-                        <div class="catalog-body">
-                            <div>
-                                <span class="tag">Vestido</span>
-                                <strong>Vestido amarillo tropical</strong>
-                                <p>Una versión luminosa del diseño en exterior.</p>
-                            </div>
-                            <ul>
-                                <li>Pedido por encargo.</li>
-                                <li>Color y disponibilidad a consultar.</li>
-                            </ul>
-                            <div class="catalog-actions">
-                                <a class="catalog-link" href="https://www.instagram.com/p/DIEshbBgYrG/?img_index=1" target="_blank" rel="noopener noreferrer">Ver publicación</a>
-                                <a class="catalog-link" href="https://wa.me/18295420597?text=Hola%2C%20quiero%20cotizar%20el%20vestido%20amarillo%20tropical%20de%20Yuli%20Creation." target="_blank" rel="noopener noreferrer">Pedir este diseño</a>
-                            </div>
-                        </div>
-                    </article>
-
-                    <article class="catalog-card">
-                        <div class="catalog-media">
-                            <img src="img/WhatsApp Image 2026-01-06 at 12.21.41 PM.jpeg" alt="Conjunto blanco en crochet con top halter y falda" loading="lazy">
-                        </div>
-                        <div class="catalog-body">
-                            <div>
-                                <span class="tag">Conjunto</span>
-                                <strong>Conjunto blanco halter</strong>
-                                <p>Conjunto blanco con top halter y falda tejida.</p>
-                            </div>
-                            <ul>
-                                <li>Pedido por encargo.</li>
-                                <li>Tallas y colores a consultar.</li>
-                            </ul>
-                            <div class="catalog-actions">
-                                <a class="catalog-link" href="https://www.instagram.com/p/DEsmXDapSLQ/?img_index=1" target="_blank" rel="noopener noreferrer">Ver publicación</a>
-                                <a class="catalog-link" href="https://wa.me/18295420597?text=Hola%2C%20quiero%20cotizar%20el%20conjunto%20blanco%20halter%20de%20Yuli%20Creation." target="_blank" rel="noopener noreferrer">Pedir este diseño</a>
-                            </div>
-                        </div>
-                    </article>
-
-                    <article class="catalog-card">
-                        <div class="catalog-media">
-                            <img src="img/WhatsApp Image 2026-01-06 at 12.21.41 PM (3).jpeg" alt="Conjunto blanco tejido en crochet en interior" loading="lazy">
-                        </div>
-                        <div class="catalog-body">
-                            <div>
-                                <span class="tag">Conjunto</span>
-                                <strong>Conjunto blanco vista interior</strong>
-                                <p>Una vista cercana para resaltar detalles del tejido.</p>
-                            </div>
-                            <ul>
-                                <li>Pedido por encargo.</li>
-                                <li>Tallas y colores a consultar.</li>
-                            </ul>
-                            <div class="catalog-actions">
-                                <a class="catalog-link" href="https://www.instagram.com/p/DFBWjtNpotQ/?img_index=1" target="_blank" rel="noopener noreferrer">Ver publicación</a>
-                                <a class="catalog-link" href="https://wa.me/18295420597?text=Hola%2C%20quiero%20m%C3%A1s%20informaci%C3%B3n%20sobre%20el%20conjunto%20blanco%20de%20Yuli%20Creation." target="_blank" rel="noopener noreferrer">Consultar diseño</a>
-                            </div>
-                        </div>
-                    </article>
-
-                    <article class="catalog-card">
-                        <div class="catalog-media">
-                            <img src="img/WhatsApp Image 2026-01-06 at 12.21.42 PM.jpeg" alt="Detalle del top blanco tejido en crochet con flor central" loading="lazy">
-                        </div>
-                        <div class="catalog-body">
-                            <div>
-                                <span class="tag">Detalle</span>
-                                <strong>Top blanco con flor</strong>
-                                <p>Top blanco en crochet con flor central.</p>
-                            </div>
-                            <ul>
-                                <li>Pedido por encargo.</li>
-                                <li>Tallas y colores a consultar.</li>
-                            </ul>
-                            <div class="catalog-actions">
-                                <a class="catalog-link" href="https://www.instagram.com/p/C9NriyQuGR1/?img_index=1" target="_blank" rel="noopener noreferrer">Ver publicación</a>
-                                <a class="catalog-link" href="https://wa.me/18295420597?text=Hola%2C%20quiero%20cotizar%20el%20top%20blanco%20con%20flor%20de%20Yuli%20Creation." target="_blank" rel="noopener noreferrer">Pedir este diseño</a>
-                            </div>
-                        </div>
-                    </article>
-                </div>
+            <div class="tile tile-short">
+              <img src="img/img-09.jpg" alt="Detalle del tejido en crochet" loading="lazy">
             </div>
-        </section>
-
-        <section class="section" id="instagram">
-            <div class="container">
-                <span class="eyebrow">Instagram</span>
-                <h2 class="section-title">Más diseños en @yuli_creation.</h2>
-                <p class="section-copy">
-                    Descubre nuevas piezas y escríbenos directamente.
-                </p>
-
-                <div class="instagram-panel">
-                    <article class="instagram-box">
-                        <h3>Diseños, detalles y novedades</h3>
-                        <p>Más looks, más texturas y nuevas publicaciones de la marca.</p>
-                        <div class="instagram-preview">
-                            <div class="preview-tile" style="--tile-gradient: linear-gradient(135deg, #cc3a6b, #ff8f78);">Prendas tejidas</div>
-                            <div class="preview-tile" style="--tile-gradient: linear-gradient(135deg, #f38a64, #ffd27d);">Conjuntos</div>
-                            <div class="preview-tile" style="--tile-gradient: linear-gradient(135deg, #db4f87, #ffb0a4);">Detalles</div>
-                            <div class="preview-tile" style="--tile-gradient: linear-gradient(135deg, #f1a85d, #f8dd9f);">Novedades</div>
-                        </div>
-                    </article>
-
-                    <article class="instagram-box">
-                        <h3>Haz tu pedido</h3>
-                        <p>Escríbenos por Instagram o WhatsApp.</p>
-                        <div class="hero-actions">
-                            <a class="button button-primary" href="https://www.instagram.com/yuli_creation/" target="_blank" rel="noopener noreferrer">Abrir @yuli_creation</a>
-                            <a class="button button-secondary" href="mailto:yulisadelacruz109@gmail.com">Escribir por email</a>
-                        </div>
-                    </article>
-                </div>
-            </div>
-        </section>
-
-        <section class="section" id="pedidos">
-            <div class="container">
-                <span class="eyebrow">Pedidos</span>
-                <h2 class="section-title">Haz tu pedido con Yuli Creation.</h2>
-                <p class="section-copy">
-                    Elige tu diseño y escríbenos para cotizar.
-                </p>
-
-                <div class="faq-grid">
-                    <article class="faq">
-                        <h3>¿Cuánto tarda un pedido?</h3>
-                        <p>La producción habitual es de 2 a 4 semanas. El tiempo final puede variar según el tamaño de la pieza, la complejidad y la agenda de pedidos activos.</p>
-                    </article>
-                    <article class="faq">
-                        <h3>¿Se aceptan personalizaciones?</h3>
-                        <p>Sí. Puedes solicitar ajustes de color, talla y estilo.</p>
-                    </article>
-                    <article class="faq">
-                        <h3>¿Por dónde puedo hacer mi pedido?</h3>
-                        <p>Puedes escribir por WhatsApp, Instagram o email, según el canal que te resulte más cómodo.</p>
-                    </article>
-                    <article class="faq">
-                        <h3>¿Qué tipos de piezas maneja Yuli?</h3>
-                        <p>Prendas en crochet, accesorios, amigurumis, tejidos decorativos y pedidos especiales hechos a mano.</p>
-                    </article>
-                </div>
-
-                <div class="contact-grid">
-                    <article class="contact-card">
-                        <h3>Canales de contacto</h3>
-                        <p>Consulta diseño, talla, color y disponibilidad.</p>
-                        <ul class="contact-list">
-                            <li>WhatsApp: <a href="https://wa.me/18295420597" target="_blank" rel="noopener noreferrer">+1 (829) 542-0597</a></li>
-                            <li>Email: <a href="mailto:yulisadelacruz109@gmail.com">yulisadelacruz109@gmail.com</a></li>
-                            <li>Instagram: <a href="https://www.instagram.com/yuli_creation/" target="_blank" rel="noopener noreferrer">@yuli_creation</a></li>
-                        </ul>
-                    </article>
-
-                    <article class="contact-card">
-                        <h3>Comienza tu pedido</h3>
-                        <p>Escríbenos para cotizar tu pieza.</p>
-                        <div class="hero-actions">
-                            <a class="button button-primary" href="https://wa.me/18295420597?text=Hola%2C%20quiero%20cotizar%20una%20pieza%20de%20Yuli%20Creation." target="_blank" rel="noopener noreferrer">Pedir por WhatsApp</a>
-                        </div>
-                    </article>
-                </div>
-            </div>
-        </section>
-    </main>
-
-    <footer class="footer">
-        <div class="container footer-inner">
-            <p>© 2026 Yuli Creation. Crochet artesanal, pedidos personalizados y atención directa.</p>
-            <div class="footer-links">
-                <a href="#inicio">Inicio</a>
-                <a href="https://www.instagram.com/yuli_creation/" target="_blank" rel="noopener noreferrer">Instagram</a>
-                <a href="https://wa.me/18295420597" target="_blank" rel="noopener noreferrer">WhatsApp</a>
-                <a href="mailto:yulisadelacruz109@gmail.com">Email</a>
-            </div>
+          </div>
         </div>
-    </footer>
+      </div>
 
-    <script type="application/ld+json">
-        {
-            "@context": "https://schema.org",
-            "@type": "LocalBusiness",
-            "name": "Yuli Creation",
-            "image": "img/yuli-logo.png",
-            "description": "Negocio de crochet artesanal con pedidos personalizados de prendas, accesorios y tejidos hechos a mano.",
-            "email": "yulisadelacruz109@gmail.com",
-            "telephone": "+18295420597",
-            "url": "https://www.instagram.com/yuli_creation/",
-            "sameAs": [
-                "https://www.instagram.com/yuli_creation/"
-            ]
-        }
-    </script>
+      <!-- Stats bar -->
+      <div class="wrap">
+        <div class="stats-bar reveal" style="transition-delay:0.3s">
+          <div class="stat-item">
+            <div class="stat-num">100%</div>
+            <div class="stat-label">Elaborado a mano, sin producción en serie</div>
+          </div>
+          <div class="stat-item">
+            <div class="stat-num">2–4</div>
+            <div class="stat-label">Semanas de producción por pieza</div>
+          </div>
+          <div class="stat-item">
+            <div class="stat-num">DM + WA</div>
+            <div class="stat-label">Pedidos por Instagram o WhatsApp</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ── NOSOTROS / ABOUT ─────────────────────────────── -->
+    <section class="sec" id="nosotros">
+      <div class="wrap about-grid">
+        <div class="about-image-wrap reveal">
+          <div class="about-image-main">
+            <img src="img/img-07.jpg" alt="Vestido en crochet con textura artesanal de Yuli Creation" loading="lazy">
+          </div>
+          <div class="about-image-accent">
+            <img src="img/img-04.jpg" alt="Detalle del tejido artesanal de Yuli Creation" loading="lazy">
+          </div>
+        </div>
+
+        <div class="reveal" style="transition-delay:0.12s">
+          <span class="badge">Yuli Creation</span>
+          <h2 class="sec-title">Diseños por encargo,<br>para quien elige diferente.</h2>
+          <p class="sec-copy" style="margin-top:1rem">
+            Creamos prendas y accesorios en crochet pensados para quienes valoran lo hecho a mano. Cada pedido es una oportunidad de llevar algo único, adaptado a tus medidas y colores favoritos.
+          </p>
+          <div class="value-cards" style="margin-top:1.8rem">
+            <div class="value-card">
+              <div class="value-icon">🧶</div>
+              <div>
+                <h3>Prendas y conjuntos</h3>
+                <p>Vestidos, tops, faldas y conjuntos tejidos con hilo seleccionado y terminaciones cuidadas.</p>
+              </div>
+            </div>
+            <div class="value-card">
+              <div class="value-icon">✏️</div>
+              <div>
+                <h3>Personalización total</h3>
+                <p>Solicita ajustes de talla, color y estilo. Trabajamos contigo para que el resultado sea exactamente lo que buscas.</p>
+              </div>
+            </div>
+            <div class="value-card">
+              <div class="value-icon">💬</div>
+              <div>
+                <h3>Atención directa y cercana</h3>
+                <p>Hablamos por WhatsApp, Instagram o email. Sin intermediarios — directamente con quien crea las piezas.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ── CATÁLOGO ─────────────────────────────────────── -->
+    <section class="catalog-sec" id="catalogo">
+      <div class="wrap">
+        <div class="sec-header two-col reveal">
+          <div>
+            <span class="badge">Catálogo</span>
+            <h2 class="sec-title" style="margin-top:0.6rem">Diseños disponibles<br>para pedir.</h2>
+          </div>
+          <a class="btn btn-ghost" href="https://www.instagram.com/yuli_creation/" target="_blank" rel="noopener noreferrer">Ver Instagram →</a>
+        </div>
+
+        <div class="catalog-grid">
+
+          <!-- Card 1 -->
+          <article class="cat-card reveal">
+            <div class="cat-media">
+              <img src="img/img-01.jpg" alt="Vestido largo amarillo tejido en crochet de Yuli Creation" loading="lazy">
+              <span class="cat-tag">Vestido</span>
+            </div>
+            <div class="cat-body">
+              <div>
+                <h3>Vestido largo amarillo</h3>
+                <p>Vestido largo en crochet con manga larga y abertura frontal. Textura detallada, silueta elegante.</p>
+              </div>
+              <ul>
+                <li>Pedido por encargo</li>
+                <li>Tallas y colores a consultar</li>
+              </ul>
+              <div class="cat-actions">
+                <a class="cat-btn cat-btn-ig" href="https://www.instagram.com/p/DPmKnKjgHnf/?img_index=1" target="_blank" rel="noopener noreferrer">Ver post</a>
+                <a class="cat-btn cat-btn-wa" href="https://wa.me/18295420597?text=Hola%2C%20quiero%20cotizar%20el%20vestido%20largo%20amarillo%20de%20Yuli%20Creation." target="_blank" rel="noopener noreferrer">💬 Pedir</a>
+              </div>
+            </div>
+          </article>
+
+          <!-- Card 2 -->
+          <article class="cat-card reveal" style="transition-delay:0.1s">
+            <div class="cat-media">
+              <img src="img/img-02.jpg" alt="Vista alternativa del vestido amarillo en crochet" loading="lazy">
+              <span class="cat-tag">Vestido</span>
+            </div>
+            <div class="cat-body">
+              <div>
+                <h3>Vestido amarillo — vista editorial</h3>
+                <p>Una perspectiva adicional que muestra la textura del tejido y el movimiento de la silueta completa.</p>
+              </div>
+              <ul>
+                <li>Pedido por encargo</li>
+                <li>Tallas y colores a consultar</li>
+              </ul>
+              <div class="cat-actions">
+                <a class="cat-btn cat-btn-ig" href="https://www.instagram.com/p/DOHuN0AgAiy/?img_index=1" target="_blank" rel="noopener noreferrer">Ver post</a>
+                <a class="cat-btn cat-btn-wa" href="https://wa.me/18295420597?text=Hola%2C%20quiero%20m%C3%A1s%20informaci%C3%B3n%20sobre%20el%20vestido%20amarillo%20de%20Yuli%20Creation." target="_blank" rel="noopener noreferrer">💬 Consultar</a>
+              </div>
+            </div>
+          </article>
+
+          <!-- Card 3 -->
+          <article class="cat-card reveal" style="transition-delay:0.2s">
+            <div class="cat-media">
+              <img src="img/img-07.jpg" alt="Vestido amarillo en crochet en exterior tropical" loading="lazy">
+              <span class="cat-tag">Vestido</span>
+            </div>
+            <div class="cat-body">
+              <div>
+                <h3>Vestido amarillo tropical</h3>
+                <p>Versión luminosa del diseño en ambiente exterior. Ideal para ocasiones especiales y días de playa.</p>
+              </div>
+              <ul>
+                <li>Pedido por encargo</li>
+                <li>Color y disponibilidad a consultar</li>
+              </ul>
+              <div class="cat-actions">
+                <a class="cat-btn cat-btn-ig" href="https://www.instagram.com/p/DIEshbBgYrG/?img_index=1" target="_blank" rel="noopener noreferrer">Ver post</a>
+                <a class="cat-btn cat-btn-wa" href="https://wa.me/18295420597?text=Hola%2C%20quiero%20cotizar%20el%20vestido%20amarillo%20tropical%20de%20Yuli%20Creation." target="_blank" rel="noopener noreferrer">💬 Pedir</a>
+              </div>
+            </div>
+          </article>
+
+          <!-- Card 4 -->
+          <article class="cat-card reveal">
+            <div class="cat-media">
+              <img src="img/img-05.jpg" alt="Conjunto blanco en crochet con top halter y falda" loading="lazy">
+              <span class="cat-tag">Conjunto</span>
+            </div>
+            <div class="cat-body">
+              <div>
+                <h3>Conjunto blanco halter</h3>
+                <p>Top halter con tirantes y falda tejida. Un conjunto fresco que combina elegancia y artesanía.</p>
+              </div>
+              <ul>
+                <li>Pedido por encargo</li>
+                <li>Tallas y colores a consultar</li>
+              </ul>
+              <div class="cat-actions">
+                <a class="cat-btn cat-btn-ig" href="https://www.instagram.com/p/DEsmXDapSLQ/?img_index=1" target="_blank" rel="noopener noreferrer">Ver post</a>
+                <a class="cat-btn cat-btn-wa" href="https://wa.me/18295420597?text=Hola%2C%20quiero%20cotizar%20el%20conjunto%20blanco%20halter%20de%20Yuli%20Creation." target="_blank" rel="noopener noreferrer">💬 Pedir</a>
+              </div>
+            </div>
+          </article>
+
+          <!-- Card 5 -->
+          <article class="cat-card reveal" style="transition-delay:0.1s">
+            <div class="cat-media">
+              <img src="img/img-08.jpg" alt="Conjunto blanco tejido en crochet, vista interior" loading="lazy">
+              <span class="cat-tag">Conjunto</span>
+            </div>
+            <div class="cat-body">
+              <div>
+                <h3>Conjunto blanco — vista interior</h3>
+                <p>Vista cercana que resalta la calidad del tejido y los detalles finos de la confección artesanal.</p>
+              </div>
+              <ul>
+                <li>Pedido por encargo</li>
+                <li>Tallas y colores a consultar</li>
+              </ul>
+              <div class="cat-actions">
+                <a class="cat-btn cat-btn-ig" href="https://www.instagram.com/p/DFBWjtNpotQ/?img_index=1" target="_blank" rel="noopener noreferrer">Ver post</a>
+                <a class="cat-btn cat-btn-wa" href="https://wa.me/18295420597?text=Hola%2C%20quiero%20m%C3%A1s%20informaci%C3%B3n%20sobre%20el%20conjunto%20blanco%20de%20Yuli%20Creation." target="_blank" rel="noopener noreferrer">💬 Consultar</a>
+              </div>
+            </div>
+          </article>
+
+          <!-- Card 6 -->
+          <article class="cat-card reveal" style="transition-delay:0.2s">
+            <div class="cat-media">
+              <img src="img/img-09.jpg" alt="Top blanco en crochet con flor central de Yuli Creation" loading="lazy">
+              <span class="cat-tag">Top</span>
+            </div>
+            <div class="cat-body">
+              <div>
+                <h3>Top blanco con flor</h3>
+                <p>Top en crochet blanco con detalle de flor tejida al centro. Pieza versátil para distintas ocasiones.</p>
+              </div>
+              <ul>
+                <li>Pedido por encargo</li>
+                <li>Tallas y colores a consultar</li>
+              </ul>
+              <div class="cat-actions">
+                <a class="cat-btn cat-btn-ig" href="https://www.instagram.com/p/C9NriyQuGR1/?img_index=1" target="_blank" rel="noopener noreferrer">Ver post</a>
+                <a class="cat-btn cat-btn-wa" href="https://wa.me/18295420597?text=Hola%2C%20quiero%20cotizar%20el%20top%20blanco%20con%20flor%20de%20Yuli%20Creation." target="_blank" rel="noopener noreferrer">💬 Pedir</a>
+              </div>
+            </div>
+          </article>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ── INSTAGRAM ─────────────────────────────────────── -->
+    <section class="sec" id="instagram">
+      <div class="wrap">
+        <div class="sec-header reveal">
+          <span class="badge">Instagram</span>
+          <h2 class="sec-title">Más diseños en<br>@yuli_creation.</h2>
+        </div>
+
+        <div class="ig-sec reveal" style="transition-delay:0.1s">
+          <div class="ig-card">
+            <h3>Diseños, detalles y novedades</h3>
+            <p>Descubre looks nuevos, materiales, procesos de tejido y publicaciones recientes de la marca.</p>
+            <div class="ig-grid">
+              <div class="ig-tile">
+                <img src="img/img-03.jpg" alt="Diseño en crochet de Yuli Creation" loading="lazy">
+                <div class="ig-tile-overlay">Prendas tejidas</div>
+              </div>
+              <div class="ig-tile">
+                <img src="img/img-06.jpg" alt="Conjunto de Yuli Creation" loading="lazy">
+                <div class="ig-tile-overlay">Conjuntos</div>
+              </div>
+              <div class="ig-tile">
+                <img src="img/img-04.jpg" alt="Detalle de tejido de Yuli Creation" loading="lazy">
+                <div class="ig-tile-overlay">Detalles</div>
+              </div>
+              <div class="ig-tile">
+                <img src="img/img-02.jpg" alt="Novedad de Yuli Creation" loading="lazy">
+                <div class="ig-tile-overlay">Novedades</div>
+              </div>
+            </div>
+          </div>
+
+          <div class="ig-card">
+            <h3>Haz tu pedido hoy</h3>
+            <p>Visita el perfil para ver todos los diseños disponibles y escríbenos para comenzar tu pedido personalizado.</p>
+            <div class="ig-cta">
+              <a class="btn btn-main" href="https://www.instagram.com/yuli_creation/" target="_blank" rel="noopener noreferrer">
+                📷 Abrir @yuli_creation
+              </a>
+              <a class="btn btn-ghost" href="https://wa.me/18295420597?text=Hola%2C%20quiero%20cotizar%20una%20pieza%20de%20Yuli%20Creation." target="_blank" rel="noopener noreferrer">
+                💬 Escribir por WhatsApp
+              </a>
+              <a class="btn btn-ghost" href="mailto:yulisadelacruz109@gmail.com">
+                ✉️ Enviar un email
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ── PEDIDOS / FAQ + CONTACTO ───────────────────────── -->
+    <section class="sec" id="pedidos" style="background: var(--warm);">
+      <div class="wrap">
+        <div class="sec-header reveal">
+          <span class="badge">Pedidos</span>
+          <h2 class="sec-title">Todo lo que necesitas<br>saber para pedir.</h2>
+        </div>
+
+        <div class="faq-contact-grid">
+          <div class="faq-list reveal">
+            <article class="faq-item">
+              <h3>¿Cuánto tarda un pedido?</h3>
+              <p>La producción habitual es de 2 a 4 semanas. El tiempo puede variar según el tamaño de la pieza, la complejidad del diseño y la agenda de pedidos activos.</p>
+            </article>
+            <article class="faq-item">
+              <h3>¿Se aceptan personalizaciones?</h3>
+              <p>Sí. Puedes solicitar ajustes de color, talla y estilo. Trabajamos contigo para adaptar cada pieza a lo que necesitas.</p>
+            </article>
+            <article class="faq-item">
+              <h3>¿Por dónde puedo hacer mi pedido?</h3>
+              <p>Puedes escribir por WhatsApp, Instagram o email — el canal que te resulte más cómodo. Respondemos a todos.</p>
+            </article>
+            <article class="faq-item">
+              <h3>¿Qué tipos de piezas maneja Yuli?</h3>
+              <p>Prendas en crochet (vestidos, tops, conjuntos), accesorios, amigurumis, tejidos decorativos y pedidos especiales.</p>
+            </article>
+          </div>
+
+          <div class="contact-panel reveal" style="transition-delay:0.15s">
+            <h3>¿Lista para tu pieza?</h3>
+            <p>Escríbenos para cotizar tu diseño. Atendemos con gusto por cualquiera de estos canales.</p>
+
+            <div class="contact-links">
+              <a class="contact-link" href="https://wa.me/18295420597" target="_blank" rel="noopener noreferrer">
+                <span class="contact-link-icon">📱</span>
+                +1 (829) 542-0597
+              </a>
+              <a class="contact-link" href="mailto:yulisadelacruz109@gmail.com">
+                <span class="contact-link-icon">✉️</span>
+                yulisadelacruz109@gmail.com
+              </a>
+              <a class="contact-link" href="https://www.instagram.com/yuli_creation/" target="_blank" rel="noopener noreferrer">
+                <span class="contact-link-icon">📷</span>
+                @yuli_creation
+              </a>
+            </div>
+
+            <div class="contact-divider"></div>
+
+            <div class="contact-cta">
+              <a class="contact-btn contact-btn-wa" href="https://wa.me/18295420597?text=Hola%2C%20quiero%20cotizar%20una%20pieza%20de%20Yuli%20Creation." target="_blank" rel="noopener noreferrer">
+                💬 Pedir por WhatsApp
+              </a>
+              <a class="contact-btn contact-btn-ig" href="https://www.instagram.com/yuli_creation/" target="_blank" rel="noopener noreferrer">
+                📷 Ir al Instagram
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ── FOOTER ──────────────────────────────────────────── -->
+  <footer class="footer">
+    <div class="wrap footer-inner">
+      <div class="footer-brand">
+        <img src="img/yuli-logo.png" alt="Logo de Yuli Creation" width="36" height="36" loading="lazy">
+        <span>Yuli Creation</span>
+      </div>
+      <p class="footer-copy">© 2026 Yuli Creation — Crochet artesanal y pedidos personalizados.</p>
+      <div class="footer-links">
+        <a href="#inicio">Inicio</a>
+        <a href="#catalogo">Catálogo</a>
+        <a href="https://www.instagram.com/yuli_creation/" target="_blank" rel="noopener noreferrer">Instagram</a>
+        <a href="https://wa.me/18295420597" target="_blank" rel="noopener noreferrer">WhatsApp</a>
+        <a href="mailto:yulisadelacruz109@gmail.com">Email</a>
+      </div>
+    </div>
+  </footer>
+
+  <!-- ── SCROLL REVEAL SCRIPT ─────────────────────────────── -->
+  <script>
+    (function () {
+      const els = document.querySelectorAll('.reveal');
+      if (!els.length) return;
+
+      const obs = new IntersectionObserver(
+        (entries) => {
+          entries.forEach((e) => {
+            if (e.isIntersecting) {
+              e.target.classList.add('visible');
+              obs.unobserve(e.target);
+            }
+          });
+        },
+        { threshold: 0.1, rootMargin: '0px 0px -40px 0px' }
+      );
+
+      els.forEach((el) => obs.observe(el));
+    })();
+  </script>
+
+  <!-- ── STRUCTURED DATA ─────────────────────────────────── -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "LocalBusiness",
+    "name": "Yuli Creation",
+    "image": "img/yuli-logo.png",
+    "description": "Negocio de crochet artesanal con pedidos personalizados de prendas, accesorios y tejidos hechos a mano.",
+    "email": "yulisadelacruz109@gmail.com",
+    "telephone": "+18295420597",
+    "url": "https://www.instagram.com/yuli_creation/",
+    "sameAs": ["https://www.instagram.com/yuli_creation/"],
+    "offers": {
+      "@type": "Offer",
+      "description": "Prendas en crochet hechas a mano bajo pedido. Vestidos, conjuntos, tops y accesorios personalizados."
+    }
+  }
+  </script>
+
 </body>
 </html>
